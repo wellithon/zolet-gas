@@ -24,6 +24,7 @@
             padding: 0.5rem 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -67,7 +68,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            height: 350px; /* Para manter altura consistente */
         }
 
         .product img {
@@ -90,7 +90,7 @@
         }
 
         .product button {
-            margin-top: auto; /* Ajusta posição para o rodapé do card */
+            margin-top: auto;
             padding: 0.5rem 1rem;
             background-color: #007BFF;
             color: white;
@@ -110,6 +110,33 @@
             color: white;
             padding: 1rem 0;
             margin-top: 2rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .product {
+                width: 90%;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product img {
+                height: 150px;
+            }
+
+            .product button {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
         }
     </style>
     <script>
@@ -162,7 +189,7 @@
                 </div>
                 <div class="product">
                     <img src="https://http2.mlstatic.com/D_NQ_NP_713919-MLB74180893576_012024-O.webp" alt="Mangueira">
-                    <h3>Mangueira Gás Cozinha Botijão 13kg</h3>
+                    <h3>Mangueira Gás Cozinha Botijao 13kg</h3>
                     <p>Mangueiras resistentes para uso doméstico.</p>
                     <button onclick="location.href='https://wa.me/5545999208741?text=Quero%20comprar%20uma%20mangueira!'">
                         Compre Agora
