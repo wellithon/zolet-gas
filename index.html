@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zolet'S Gás</title>
+    <link rel="icon" href="imagem/icon.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,8 +16,25 @@
         header {
             background-color: #007BFF;
             color: #fff;
-            text-align: center;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Coloca a logo e o nome nas extremidades */
+            max-width: 1200px; /* Largura máxima para o conteúdo do cabeçalho */
+            margin: 0 auto; /* Centraliza o container */
+            padding: 0 20px; /* Adiciona um pouco de espaço nas laterais */
+        }
+
+        .logo img {
+            max-height: 60px; /* Ajuste a altura máxima da sua logo */
+        }
+
+        .company-name {
+            font-size: 2rem; /* Aumenta o tamanho da fonte da empresa */
+            margin: 0; /* Remove a margem padrão do h1 */
         }
 
         nav {
@@ -32,8 +50,9 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 0.7rem 1.2rem; /* Aumenta um pouco o padding para facilitar o clique */
+            border-radius: 8px; /* Arredonda mais as bordas dos links */
+            transition: background-color 0.3s ease; /* Adiciona uma transição suave no hover */
         }
 
         nav a:hover {
@@ -104,6 +123,40 @@
             background-color: #0056b3;
         }
 
+        #localizacao-contato {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        #mapa iframe {
+            border: 0;
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+        }
+
+        #contato-whatsapp {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        #contato-whatsapp a {
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        #contato-whatsapp a:hover {
+            background-color: #1DA851;
+        }
+
         footer {
             text-align: center;
             background-color: #333;
@@ -112,30 +165,54 @@
             margin-top: 2rem;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
-            .product {
-                width: 90%;
+            .header-container {
+                flex-direction: column; /* Empilha a logo e o nome em telas menores */
+                align-items: center;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .logo img {
+                max-height: 50px; /* Ajusta a altura da logo em telas menores */
+                margin-bottom: 10px;
+            }
+
+            .company-name {
+                font-size: 1.5rem; /* Reduz o tamanho da fonte do nome em telas menores */
             }
 
             nav {
-                flex-direction: column;
-                align-items: center;
+                display: none; /* Esconde a barra de navegação em telas menores */
+                flex-direction: column; /* Empilha os links de navegação em telas menores */
+                align-items: stretch; /* Faz os links ocuparem a largura total */
             }
 
             nav a {
                 margin: 5px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product img {
-                height: 150px;
+                padding: 1rem;
+                border-radius: 0; /* Remove a borda arredondada em telas menores */
+                text-align: center; /* Centraliza o texto dos links */
             }
 
-            .product button {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
+            .product {
+                width: 90%;
+            }
+
+            #localizacao-contato {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #mapa {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: 100%; /* Garante que o mapa ocupe a largura total */
+            }
+
+            footer {
+                padding: 0.5rem 0; /* Reduz um pouco o padding em telas menores */
+                font-size: 0.9rem; /* Diminui um pouco a fonte, se necessário */
             }
         }
     </style>
@@ -151,7 +228,13 @@
 </head>
 <body onload="showTab('produtos')">
     <header>
-        <h1>Zolet'S Gás</h1>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">
+                    <img src="imagem/logo0.png" alt="Logo Zolet'S Gás">
+                </a>
+            </div>
+        </div>
     </header>
     <nav>
         <a href="#" onclick="showTab('produtos')">Produtos</a>
@@ -161,13 +244,13 @@
     </nav>
     <main>
         <div id="produtos" class="tab-content active">
-            <h2>Produtos</h2>
+            <h2><center>Produtos</center></h2>
             <div class="product-grid">
                 <div class="product">
                     <img src="https://ultrachama.com.br/wp-content/uploads/2022/04/ultragaz-_0002_p13.png" alt="Botijão de Gás">
                     <h3>Botijão 13kg - Ultragaz</h3>
                     <p>Botijões de gás de alta qualidade.</p>
-                    <button onclick="location.href='https://wa.me/5545999208741?text=Quero%20comprar%20um%20botijão%20de%20gás!'">
+                    <button onclick="window.open('https://wa.me/5545999208741?text=Quero%20comprar%20um%20botijão%20de%20gás!', '_blank', 'noopener,noreferrer')">
                         Compre Agora
                     </button>
                 </div>
@@ -175,7 +258,7 @@
                     <img src="https://aguarochabranca.com.br/wp-content/uploads/2018/04/20-litros-verde-2.png" alt="Galão de Água">
                     <h3>Água Mineral 20L</h3>
                     <p>Água mineral em galões para a sua necessidade.</p>
-                    <button onclick="location.href='https://wa.me/5545999208741?text=Quero%20comprar%20um%20galão%20de%20água!'">
+                    <button onclick="window.open('https://wa.me/5545999208741?text=Quero%20comprar%20um%20galão%20de%20água!', '_blank', 'noopener,noreferrer')">
                         Compre Agora
                     </button>
                 </div>
@@ -183,7 +266,7 @@
                     <img src="https://lojasafubra.vtexassets.com/arquivos/ids/186768-600-auto?v=638076926926800000&width=600&height=auto&aspect=true" alt="Válvula">
                     <h3>Registro para Botijão 13kg Gás Cozinha</h3>
                     <p>Válvulas seguras e duráveis para conexão de gás.</p>
-                    <button onclick="location.href='https://wa.me/5545999208741?text=Quero%20comprar%20uma%20válvula!'">
+                    <button onclick="window.open('https://wa.me/5545999208741?text=Quero%20comprar%20uma%20válvula!', '_blank', 'noopener,noreferrer')">
                         Compre Agora
                     </button>
                 </div>
@@ -191,9 +274,27 @@
                     <img src="https://http2.mlstatic.com/D_NQ_NP_713919-MLB74180893576_012024-O.webp" alt="Mangueira">
                     <h3>Mangueira Gás Cozinha Botijao 13kg</h3>
                     <p>Mangueiras resistentes para uso doméstico.</p>
-                    <button onclick="location.href='https://wa.me/5545999208741?text=Quero%20comprar%20uma%20mangueira!'">
+                    <button onclick="window.open('https://wa.me/5545999208741?text=Quero%20comprar%20uma%20mangueira!', '_blank', 'noopener,noreferrer')">
                         Compre Agora
                     </button>
+                </div>
+            </div>
+            <div id="localizacao-contato">
+                <div id="contato-whatsapp">
+                    <h3>Entre em Contato:</h3>
+                    <a href="https://wa.me/5545999208741?text=Olá,%20gostaria%20de%20mais%20informações!" target="_blank">
+                        📞 Fale Conosco no WhatsApp
+                    </a>
+                </div>
+                <div id="mapa" style="flex: 1; margin-left: 1rem;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.717859745239!2d-53.49815458502063!3d-24.967920384002328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd4e9411b05c7%3A0xe10d5408d0f0901b!2sR.%20Serra%20Negra%2C%201308%20-%20Morumbi%2C%20Cascavel%20-%20PR%2C%2085817-670!5e0!3m2!1spt-BR!2sbr!4v1698696425489!5m2!1spt-BR!2sbr"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -212,7 +313,7 @@
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 Zolet'S Gás - Todos os direitos reservados.</p>
+        <p>© 2025 Zolet'S Gás - Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
