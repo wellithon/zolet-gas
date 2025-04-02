@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<title>Zolet'S Gás | Entrega Rápida de Gás de Cozinha em Cascavel-PR</title>
-    	<meta name="description" content="Zolet'S Gás: A entrega mais rápida de gás de cozinha (13kg) em Cascavel-PR. Compre botijões, registros e mangueiras com o melhor atendimento da cidade!">
-    	<link rel="icon" href="imagem/icon.png" type="image/x-icon">
+    <title>Zolet'S Gás | Entrega Rápida de Gás de Cozinha em Cascavel-PR</title>
+    <meta name="description" content="Zolet'S Gás: A entrega mais rápida de gás de cozinha (13kg) em Cascavel-PR. Compre botijões, registros e mangueiras com o melhor atendimento da cidade!">
+    <link rel="icon" href="imagem/icon.png" type="image/x-icon">
     <style>
         /* Estilos gerais (body, header, etc. - mantidos como na versão anterior) */
         body {
@@ -47,6 +47,10 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            position: sticky; /* Torna o menu fixo */
+            top: 0; /* Cola no topo */
+            z-index: 1000; /* Garante que fique acima de outros conteúdos */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra opcional */
         }
 
         nav a {
@@ -66,15 +70,23 @@
             background-color: #0066cc;
         }
 
+        /* Adiciona padding ao body para compensar o menu fixo, se necessário */
+        /* body { padding-top: 60px; } /* Ajuste a altura conforme necessário */
+
+
         .tab-content {
             display: none;
             padding: 2rem; /* Padding padrão para abas */
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto 0 auto; /* Adiciona margem superior para não colar no menu */
+            /* Adiciona uma transição suave (opcional) */
+             opacity: 0;
+             transition: opacity 0.4s ease-in-out;
         }
 
         .tab-content.active {
             display: block;
+             opacity: 1; /* Faz a aba ativa aparecer suavemente */
         }
 
         .product-grid {
@@ -130,98 +142,116 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            transition: background-color 0.3s ease; /* Adiciona transição */
         }
 
         .product button:hover {
             background-color: #0056b3;
         }
 
-        /* --- ESTILOS CORRIGIDOS PARA LOCALIZAÇÃO --- */
-        #localizacao-contato {
+        /* --- ESTILOS CORRIGIDOS PARA LOCALIZAÇÃO EM PRODUTOS/CONTATO --- */
+        #localizacao-contato { /* Dentro da aba Produtos */
             display: flex;
             align-items: center;
             justify-content: space-around;
             margin: 3rem 0 2rem 0;
             flex-wrap: wrap;
+            gap: 1.5rem; /* Adiciona espaço entre mapa e botão */
+            padding: 1.5rem;
+            background-color: #ffffff; /* Adiciona um fundo */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         #contato-whatsapp {
             text-align: center;
-            flex-basis: auto;
-            margin-bottom: 1rem;
+            flex-basis: auto; /* Largura baseada no conteúdo */
+             /* margin-bottom: 1rem; */ /* Removido, gap controla espaçamento */
         }
 
         #contato-whatsapp h3 {
-             margin-bottom: 0.5rem;
+             margin-bottom: 0.8rem; /* Aumenta espaço */
+             color: #0056b3;
+             font-size: 1.3em;
         }
 
         #contato-whatsapp a {
             background-color: #25D366;
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px; /* Aumenta padding */
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1.25rem; /* Aumenta fonte */
             font-weight: bold;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px; /* Aumenta gap */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Adiciona transição */
         }
          #contato-whatsapp a img {
-            height: 20px;
-            width: 20px;
+            height: 22px; /* Aumenta ícone */
+            width: 22px;
          }
 
         #contato-whatsapp a:hover {
             background-color: #1DA851;
+            transform: scale(1.05); /* Efeito de zoom leve */
+        }
+         #contato-whatsapp p { /* Texto abaixo do botão */
+             margin-top: 12px;
+             font-size: 0.9em;
+             color: #555;
+         }
+
+        #mapa { /* Div do mapa em Produtos */
+            flex: 1; /* Ocupa espaço restante */
+            /* margin-left: 1rem; */ /* Removido, gap controla */
+            min-width: 280px; /* Largura mínima */
+            max-width: 600px; /* Largura máxima */
         }
 
-        #mapa {
-            flex: 1;
-            margin-left: 1rem;
-            min-width: 280px;
-            max-width: 600px;
-        }
-
-        #mapa h3 {
+        #mapa h3 { /* Título do mapa em Produtos */
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem; /* Aumenta espaço */
+            color: #0056b3;
+            font-size: 1.3em;
         }
 
-        #mapa iframe {
-            border: 0;
+        #mapa iframe { /* Iframe do mapa */
+            border: 1px solid #ccc; /* Adiciona borda sutil */
             width: 100%;
             height: 300px;
             border-radius: 8px;
             display: block;
         }
-        /* --- FIM DOS ESTILOS CORRIGIDOS --- */
+         #mapa p { /* Endereço abaixo do mapa */
+             text-align: center;
+             font-size: 0.9em;
+             margin-top: 8px; /* Aumenta espaço */
+             color: #555;
+         }
+        /* --- FIM DOS ESTILOS DE LOCALIZAÇÃO --- */
 
 
         footer {
             text-align: center;
             background-color: #333;
             color: white;
-            padding: 1rem 0;
-            margin-top: 2rem;
+            padding: 1.5rem 0; /* Aumenta padding */
+            margin-top: 3rem; /* Aumenta espaço acima */
+            font-size: 0.95em;
         }
+         footer p { margin: 0; } /* Remove margem padrão do parágrafo no footer */
 
-        /* --- INÍCIO DOS ESTILOS ESPECÍFICOS DO NOVO "SOBRE NÓS" --- */
-        /* Container Principal - Onde todo o conteúdo "Sobre Nós" vai ficar DENTRO da tab */
+
+        /* --- INÍCIO DOS ESTILOS ESPECÍFICOS DO "SOBRE NÓS" --- */
         .sobre-nos-container {
-            /* max-width: 1140px; /* Removido - A largura é controlada pelo .tab-content */
-            /* margin: 50px auto; /* Removido - O espaçamento é controlado pelo .tab-content */
-            /* padding: 30px; /* Removido - O padding é controlado pelo .tab-content */
-            background-color: #ffffff; /* Fundo branco para destacar o conteúdo */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave para dar profundidade */
-            border-radius: 10px; /* Cantos arredondados para um visual mais moderno */
-             /* Adicionado padding interno para não colar nas bordas da div#sobre */
-            padding: 25px;
-             /* Adicionado margin-top para separar do topo da tab, se necessário */
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            padding: 30px; /* Aumenta padding interno */
             margin-top: 15px;
         }
-
-        /* Seção Superior: Foto e História */
         .secao-superior {
             display: flex;
             align-items: flex-start;
@@ -229,12 +259,10 @@
             margin-bottom: 50px;
             flex-wrap: wrap;
         }
-
         .foto-lugar {
             flex: 1 1 40%;
             min-width: 280px;
         }
-
         .foto-lugar img {
             width: 100%;
             height: auto;
@@ -243,62 +271,47 @@
             border: 1px solid #eee;
             object-fit: cover;
         }
-
         .historia-texto {
             flex: 2 1 55%;
         }
-
-        /* Ajuste no H2 da história para não conflitar com H2 de outras tabs */
         #sobre .historia-texto h2 {
             margin-top: 0;
             color: #0056b3;
             margin-bottom: 15px;
-            font-size: 2em; /* Mantido tamanho grande para o título interno */
+            font-size: 2em;
             border-bottom: 3px solid #007bff;
             padding-bottom: 10px;
             display: inline-block;
-             text-align: left; /* Garante alinhamento à esquerda */
-             /* Remove centralização herdada se houver */
+             text-align: left;
              margin-left: 0;
              margin-right: 0;
+             width: auto; /* Reset */
         }
-
         .historia-texto p {
             text-align: justify;
             margin-bottom: 1em;
             color: #495057;
-            /* Reset flex-grow se herdado de .product p */
             flex-grow: 0;
-             /* Reset margin se herdado de .product p */
             margin: 0 0 1em 0;
-             font-size: 1em; /* Tamanho padrão para parágrafos normais */
+             font-size: 1em;
         }
-
-        /* Seção Inferior: Missão, Visão, Valores (Pilares) */
         .secao-pilares {
             text-align: center;
             margin-top: 40px;
         }
-
-         /* Ajuste no H3 dos pilares para não conflitar com H3 de outras tabs/produtos */
         #sobre .secao-pilares h3 {
             color: #0056b3;
             margin-bottom: 35px;
-            font-size: 1.8em; /* Mantido tamanho grande */
-             /* Reset flex-grow se herdado de .product h3 */
+            font-size: 1.8em;
             flex-grow: 0;
-             /* Reset margin se herdado de .product h3 */
-            margin: 0 auto 35px auto; /* Garante centralização */
+            margin: 0 auto 35px auto;
         }
-
         .pilares-container {
             display: flex;
             justify-content: space-around;
             gap: 25px;
             flex-wrap: wrap;
         }
-
-        /* Estilo individual de cada Pilar (Missão, Visão, Valores) */
         .pilar {
             flex: 1 1 30%;
             min-width: 260px;
@@ -308,257 +321,396 @@
             background-color: #f8f9fa;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            /* Removendo estilos herdados de .product se houver */
-            box-shadow: none; /* Resetando sombra padrão do .product */
-             min-height: auto; /* Resetando altura mínima do .product */
-             width: auto; /* Resetando largura fixa do .product */
-             margin-bottom: 15px; /* Adiciona espaço quando empilhado */
+            box-shadow: none;
+             min-height: auto;
+             width: auto;
+             margin-bottom: 15px;
+             display: flex; /* Usar flex para alinhar conteúdo interno */
+             flex-direction: column;
+             align-items: center;
         }
-
         .pilar img {
             max-width: 65px;
             height: auto;
             margin-bottom: 15px;
             transition: transform 0.3s ease;
-             /* Resetando estilos de imagem do .product */
              object-fit: initial;
              border-radius: 0;
         }
-
-         /* Ajuste no H4 dos pilares */
         #sobre .pilar h4 {
             margin-top: 0;
             margin-bottom: 10px;
             color: #007bff;
             font-size: 1.4em;
-            text-align: center; /* Garante centralização */
-             /* Reset flex-grow se herdado de .product h3 */
+            text-align: center;
             flex-grow: 0;
-             /* Reset margin se herdado de .product h3 */
              margin: 0 0 10px 0;
+             min-height: 2.8em; /* Alinha títulos dos pilares */
         }
-
-         /* Ajuste no P dos pilares */
         #sobre .pilar p {
             font-size: 0.95em;
             color: #6c757d;
-            min-height: 60px;
-             text-align: center; /* Garante centralização */
-              /* Reset flex-grow se herdado de .product p */
-             flex-grow: 0;
-              /* Reset margin se herdado de .product p */
+            /* min-height: 60px; */ /* Removido, flex-grow cuida do alinhamento */
+             text-align: center;
+             flex-grow: 1; /* Ocupa espaço para alinhar */
              margin: 0;
         }
-
         .pilar:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /* Sombra no hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
             background-color: #e9ecef;
             cursor: pointer;
         }
-
         .pilar:hover img {
              transform: scale(1.1);
         }
         /* --- FIM DOS ESTILOS ESPECÍFICOS DO NOVO "SOBRE NÓS" --- */
 
 
-        /* --- Media Query para telas menores (Original) --- */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 10px;
-            }
+        /* --- INÍCIO DOS ESTILOS PARA A NOVA SEÇÃO DE SERVIÇOS --- */
+        #servicos h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 1rem;
+            font-size: 2em;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+        }
+        .servicos-intro {
+            text-align: center;
+            font-size: 1.1em;
+            color: #495057;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+        }
+        .servicos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        .servico-card {
+            flex: 1 1 30%;
+            min-width: 280px;
+            max-width: 350px;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .servico-icon {
+            max-width: 55px;
+            height: 55px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .servico-card h4 {
+            color: #007bff;
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            min-height: 2.6em; /* Aumenta um pouco para caber títulos maiores */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .servico-card p {
+            color: #6c757d;
+            font-size: 0.95em;
+            line-height: 1.5;
+            flex-grow: 1;
+            margin-bottom: 0;
+        }
+        .servico-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+        }
+        .servicos-cta {
+            text-align: center;
+            font-size: 1.15em;
+            color: #343a40;
+            margin-top: 1rem;
+        }
+        /* --- FIM DOS ESTILOS DE SERVIÇOS --- */
 
-            .logo img {
-                max-height: 50px;
-                margin-bottom: 10px;
-            }
 
-            .company-name {
-                font-size: 1.5rem;
-            }
+         /* --- INÍCIO DOS ESTILOS CONTATO --- */
+         #contato .contato-container { /* Adiciona um container para padding */
+             background-color: #fff;
+             padding: 30px;
+             border-radius: 8px;
+             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+         }
 
-            nav {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 0.5rem 0;
-            }
+         #contato h2 {
+             text-align: center;
+             color: #0056b3;
+             margin-bottom: 1.5rem; /* Aumenta espaço */
+             font-size: 2em;
+         }
 
-            nav a {
-                margin: 5px 0;
-                padding: 1rem;
-                border-radius: 0;
-                text-align: center;
-            }
+         #contato p.intro { /* Parágrafo introdutório */
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1em;
+            color: #555;
+         }
 
-            .tab-content {
-                 padding: 1.5rem 1rem; /* Ajusta padding */
-            }
+         #contato .contato-info { /* Div que agrupa os dados */
+            line-height: 2.5; /* Aumenta espaçamento entre linhas */
+            margin-bottom: 2rem;
+            max-width: 600px; /* Limita largura para leitura */
+            margin-left: auto;
+            margin-right: auto; /* Centraliza */
+         }
 
-            .product {
-                width: 80%;
-                max-width: 300px;
-                min-height: auto;
-            }
+         #contato .contato-item {
+             display: flex;
+             align-items: center;
+             gap: 15px; /* Aumenta espaço entre ícone e texto */
+             margin-bottom: 10px; /* Espaço entre itens */
+             font-size: 1.05em; /* Aumenta levemente a fonte */
+         }
 
-             /* --- REGRAS DE LOCALIZAÇÃO PARA TELAS MENORES --- */
-            #localizacao-contato {
-                flex-direction: column;
-                align-items: center;
-                 margin-top: 2rem;
-            }
+         #contato .contato-item img {
+             height: 24px; /* Aumenta tamanho dos ícones */
+             width: 24px;
+             opacity: 0.8; /* Suaviza ícones */
+         }
 
-            #mapa {
-                width: 100%;
-                margin-left: 0;
-                margin-bottom: 1.5rem;
-                max-width: none;
-            }
+         #contato .contato-item strong {
+             color: #343a40;
+             min-width: 90px; /* Alinha os textos após strong */
+             display: inline-block;
+         }
 
-            #contato-whatsapp {
-                margin-bottom: 1rem;
-            }
-             /* --- FIM DAS REGRAS DE LOCALIZAÇÃO PARA TELAS MENORES --- */
+         #contato .contato-item a {
+             color: #007bff;
+             text-decoration: none;
+             transition: color 0.3s ease;
+         }
 
-            footer {
-                padding: 0.8rem 0;
-                font-size: 0.9rem;
-            }
+         #contato .contato-item a:hover {
+             color: #0056b3;
+             text-decoration: underline;
+         }
 
-             /* --- AJUSTES RESPONSIVOS PARA O NOVO "SOBRE NÓS" --- */
-             /* Telas médias (tablets) */
-             .secao-superior {
-                gap: 30px;
-             }
-             .foto-lugar {
-               flex-basis: 45%;
-             }
-             .historia-texto {
-                 flex-basis: 50%;
-             }
+         #mapa-contato { /* Div do mapa na aba Contato */
+            max-width: 900px; /* Aumenta largura máxima */
+            margin: 2rem auto 0 auto; /* Ajusta margem */
+         }
 
-            /* Telas pequenas (celulares) */
-            .sobre-nos-container {
-                 /* margin: 20px auto; /* Controlado por .tab-content */
-                 padding: 15px; /* Diminui padding interno no mobile */
-            }
+         #mapa-contato h3 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 1rem;
+            font-size: 1.5em;
+         }
 
-             .secao-superior {
-                flex-direction: column;
-                align-items: center;
-             }
+         #mapa-contato iframe {
+            border: 1px solid #ccc;
+            width: 100%;
+            height: 400px; /* Aumenta altura */
+            border-radius: 8px;
+            display: block;
+         }
+        /* --- FIM DOS ESTILOS CONTATO --- */
 
-             .foto-lugar {
-                max-width: 80%;
-                flex-basis: auto;
-                margin-bottom: 20px;
-             }
 
-             .historia-texto {
-                 flex-basis: auto;
-                 width: 100%;
-                 /* text-align: left; /* Ajustado abaixo */
-             }
-             #sobre .historia-texto h2 { /* Centraliza título da história no mobile */
-                 text-align: center;
-                 display: block;
-                 font-size: 1.8em; /* Reduz um pouco no mobile */
-                 border-bottom-width: 2px;
-                 padding-bottom: 8px;
-             }
-              /* Centraliza texto da história e dos pilares no mobile */
-             .historia-texto p, #sobre .pilar p {
-                 text-align: center;
-             }
-
-             .pilares-container {
-                flex-direction: column;
-                align-items: center;
-             }
-
-              #sobre .secao-pilares h3 { /* Título "Nossos Pilares" no mobile */
-                 font-size: 1.6em;
-                 margin-bottom: 25px;
-              }
-
-             .pilar {
-                 width: 90%;
-                 max-width: 400px;
-                 flex-basis: auto;
-                 margin-bottom: 15px;
-                 padding: 20px; /* Reduz padding interno do pilar no mobile */
-             }
-             .pilar:last-child {
-                 margin-bottom: 0;
-             }
-             #sobre .pilar h4 { /* Título Missão/Visão/Valores no mobile */
-                 font-size: 1.3em;
-             }
-             #sobre .pilar p { /* Texto dos pilares no mobile */
-                 font-size: 0.9em;
-                 min-height: auto; /* Remove altura mínima no mobile */
-             }
-             /* --- FIM DOS AJUSTES RESPONSIVOS PARA O NOVO "SOBRE NÓS" --- */
+        /* --- Media Queries Gerais (Combinando todas as seções) --- */
+        @media (max-width: 992px) { /* Telas Médias (Tablets) */
+             /* --- SOBRE NÓS --- */
+             .secao-superior { gap: 30px; }
+             .foto-lugar { flex-basis: 45%; }
+             .historia-texto { flex-basis: 50%; }
+             /* --- SERVIÇOS --- */
+            .servico-card { flex-basis: 45%; min-width: 260px; }
         }
 
-         /* Ajuste adicional para telas bem pequenas (Original) */
-         @media (max-width: 480px) {
-             .tab-content {
-                  padding: 1rem 0.5rem;
-             }
-             .product {
-                  width: 90%;
-             }
-             /* H2 geral para telas pequenas */
-             h2 {
-                   font-size: 1.3rem;
-             }
-             /* Títulos internos do Sobre Nós para telas pequenas */
-              #sobre .historia-texto h2 {
-                 font-size: 1.6em;
-              }
-              #sobre .secao-pilares h3 {
-                  font-size: 1.4em;
-              }
+        @media (max-width: 768px) { /* Telas Pequenas (Celulares) */
+            /* --- GERAL --- */
+            .header-container { flex-direction: column; align-items: center; text-align: center; padding: 10px; }
+            .logo img { max-height: 50px; margin-bottom: 10px; }
+            .company-name { font-size: 1.5rem; }
+            nav { flex-direction: column; align-items: stretch; padding: 0.5rem 0; }
+            nav a { margin: 5px 0; padding: 1rem; border-radius: 0; text-align: center; }
+            .tab-content { padding: 1.5rem 1rem; margin-top: 15px; } /* Reduz padding e margem */
+            footer { padding: 1rem 0; font-size: 0.9rem; margin-top: 2rem; }
 
-             #contato-whatsapp a {
-                  font-size: 1rem;
-                  padding: 8px 15px;
-             }
-             #mapa iframe {
-                  height: 250px;
-             }
-              /* Ajustes finos Sobre Nós para telas bem pequenas */
-              .sobre-nos-container {
-                 padding: 10px;
-              }
-              .secao-superior {
-                 gap: 20px;
-                 margin-bottom: 30px;
-              }
-              .pilar {
-                 padding: 15px;
-              }
-              #sobre .pilar h4 {
-                 font-size: 1.2em;
-              }
+            /* --- PRODUTOS --- */
+            .product { width: 80%; max-width: 300px; min-height: auto; }
+            #localizacao-contato { flex-direction: column; align-items: center; margin-top: 2rem; padding: 1rem; }
+            #mapa { width: 100%; margin-left: 0; margin-bottom: 1.5rem; max-width: none; }
+            #contato-whatsapp { margin-bottom: 1rem; }
+             #contato-whatsapp a { font-size: 1.1rem; padding: 10px 20px;}
+             #contato-whatsapp h3, #mapa h3 { font-size: 1.2em; }
+
+
+            /* --- SOBRE NÓS --- */
+            .sobre-nos-container { padding: 15px; }
+            .secao-superior { flex-direction: column; align-items: center; }
+            .foto-lugar { max-width: 80%; flex-basis: auto; margin-bottom: 20px; }
+            .historia-texto { flex-basis: auto; width: 100%; }
+            #sobre .historia-texto h2 { text-align: center; display: block; font-size: 1.8em; border-bottom-width: 2px; padding-bottom: 8px; width: fit-content; margin: 0 auto 15px auto; }
+            .historia-texto p, #sobre .pilar p { text-align: center; }
+            .pilares-container { flex-direction: column; align-items: center; }
+            #sobre .secao-pilares h3 { font-size: 1.6em; margin-bottom: 25px; }
+            .pilar { width: 90%; max-width: 400px; flex-basis: auto; margin-bottom: 15px; padding: 20px; }
+            .pilar:last-child { margin-bottom: 0; }
+            #sobre .pilar h4 { font-size: 1.3em; min-height: 0; }
+            #sobre .pilar p { font-size: 0.9em; min-height: auto; }
+
+
+             /* --- SERVIÇOS --- */
+             #servicos h2 { font-size: 1.8em; border-bottom-width: 2px; width: fit-content; margin: 0 auto 1rem auto;}
+            .servicos-intro { font-size: 1em; margin-bottom: 2rem; }
+            .servico-card { flex-basis: 80%; min-width: unset; max-width: 400px; padding: 20px; }
+            .servico-icon { max-width: 50px; height: 50px; }
+            .servico-card h4 { font-size: 1.2em; min-height: 0; }
+            .servico-card p { font-size: 0.9em; }
+            .servicos-cta { font-size: 1.1em; }
+
+
+             /* --- CONTATO --- */
+             #contato h2 { font-size: 1.8em; }
+             #contato .contato-container { padding: 20px; }
+             #contato .contato-item { font-size: 1em; gap: 10px; }
+             #contato .contato-item img { height: 20px; width: 20px; }
+             #contato .contato-item strong { min-width: 80px; }
+             #mapa-contato { margin-top: 1.5rem; }
+             #mapa-contato h3 { font-size: 1.3em; }
+             #mapa-contato iframe { height: 300px; }
+
+        }
+
+         @media (max-width: 480px) { /* Telas Bem Pequenas */
+             /* --- GERAL --- */
+             .tab-content { padding: 1rem 0.5rem; margin-top: 10px;}
+             h2, #sobre .historia-texto h2, #servicos h2, #contato h2 { font-size: 1.6em; } /* Reduz H2 geral */
+              #sobre .secao-pilares h3 { font-size: 1.4em; }
+              footer { padding: 0.8rem 0; font-size: 0.85em; margin-top: 1.5rem;}
+
+             /* --- PRODUTOS --- */
+             .product { width: 90%; }
+             #contato-whatsapp a { font-size: 1rem; padding: 8px 15px; }
+             #mapa iframe { height: 250px; }
+              #contato-whatsapp h3, #mapa h3 { font-size: 1.1em; }
+
+             /* --- SOBRE NÓS --- */
+             .sobre-nos-container { padding: 10px; }
+             .secao-superior { gap: 20px; margin-bottom: 30px; }
+             .pilar { padding: 15px; width: 95%; }
+             #sobre .pilar h4 { font-size: 1.2em; }
+
+             /* --- SERVIÇOS --- */
+              .servicos-grid { gap: 15px; }
+              .servico-card { flex-basis: 95%; padding: 15px; }
+              .servico-icon { max-width: 45px; height: 45px; }
+              .servico-card h4 { font-size: 1.15em; }
+              .servicos-cta { font-size: 1em; }
+
+
+             /* --- CONTATO --- */
+              #contato .contato-container { padding: 15px; }
+              #contato .contato-item { font-size: 0.9em; }
+              #contato .contato-item strong { min-width: 70px; }
+              #mapa-contato iframe { height: 250px; }
+              #mapa-contato h3 { font-size: 1.2em; }
          }
 
     </style>
     <script>
         function showTab(tabId) {
+            console.log("Mostrando aba:", tabId); // Log para depuração
             const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
+            tabs.forEach(tab => {
+                // console.log("Processando aba:", tab.id); // Log
+                tab.classList.remove('active');
+            });
             const selectedTab = document.getElementById(tabId);
             if (selectedTab) {
+                 // console.log("Aba encontrada, adicionando active:", selectedTab.id); // Log
                  selectedTab.classList.add('active');
+                 // Opcional: Rolar para o topo da aba ao trocar
+                 // Considerar a altura do menu fixo (nav)
+                 const navHeight = document.querySelector('nav')?.offsetHeight || 60; // Pega altura do nav ou usa 60px
+                 // console.log("Altura do Nav:", navHeight); // Log
+                 // Calcula a posição correta para rolar
+                 const scrollToPosition = selectedTab.offsetTop - navHeight - 15; // Subtrai altura do nav e um pequeno offset
+                 // console.log("Rolando para:", scrollToPosition); // Log
+                 window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
+            } else {
+                console.error("Erro: Aba com ID '" + tabId + "' não encontrada!"); // Log de erro
             }
         }
+
          document.addEventListener('DOMContentLoaded', function() {
-              showTab('produtos'); // Mantém 'produtos' como aba inicial
+              const validTabs = ['produtos', 'sobre', 'servicos', 'contato'];
+              const defaultTab = 'produtos';
+              let initialTab = defaultTab;
+
+              // Verifica se há um hash na URL e se é válido
+              const hash = window.location.hash.substring(1);
+              if (hash && validTabs.includes(hash)) {
+                  initialTab = hash;
+              }
+
+              console.log("Aba inicial definida como:", initialTab); // Log
+              showTab(initialTab); // Mostra a aba inicial
+
+              // Atualiza a aba ativa se o hash mudar (navegação interna, back/forward)
+              window.addEventListener('hashchange', function() {
+                   console.log("Hash mudou para:", window.location.hash); // Log
+                  const hash = window.location.hash.substring(1);
+                  if (hash && validTabs.includes(hash)) {
+                     showTab(hash);
+                  } else if (!hash) {
+                      // Se o hash for removido (ex: volta para a URL base), volta para a aba padrão
+                      showTab(defaultTab);
+                  }
+              });
+
+               // Adiciona listener aos links da navegação
+               document.querySelectorAll('nav a').forEach(link => {
+                   link.addEventListener('click', function(event) {
+                       event.preventDefault(); // Impede a rolagem padrão do link de hash
+                       const tabId = this.getAttribute('href').substring(1); // Pega ID do href="#..."
+                       console.log("Link clicado, tabId:", tabId); // Log
+
+                       // Verifica se a aba clicada já está ativa para evitar re-rolagem desnecessária
+                       const currentActiveTab = document.querySelector('.tab-content.active');
+                       if (!currentActiveTab || currentActiveTab.id !== tabId) {
+                            // Atualiza o hash APENAS se a aba não for a atual,
+                            // ou se não houver hash (para definir o primeiro)
+                            if (window.location.hash !== `#${tabId}`) {
+                                window.location.hash = tabId;
+                            } else {
+                                // Se o hash já for o correto, força a chamada do showTab
+                                // (útil se o hashchange não disparar por algum motivo)
+                                // e a rolagem.
+                                showTab(tabId);
+                            }
+                       } else {
+                           // Se a aba já está ativa, apenas rola para o topo dela (opcional)
+                           console.log("Aba já ativa, rolando para o topo dela."); // Log
+                           const navHeight = document.querySelector('nav')?.offsetHeight || 60;
+                           const scrollToPosition = document.getElementById(tabId).offsetTop - navHeight - 15;
+                            window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
+                       }
+                   });
+               });
          });
     </script>
 </head>
@@ -566,7 +718,7 @@
     <header>
          <div class="header-container">
              <div class="logo">
-                 <a href="#" onclick="showTab('produtos'); return false;">
+                 <a href="#produtos">
                       <img src="imagem/logo0.png" alt="Logo Zolet'S Gás">
                  </a>
              </div>
@@ -574,16 +726,15 @@
      </header>
 
     <nav>
-        <a href="#" onclick="showTab('produtos'); return false;">Produtos</a>
-        <a href="#" onclick="showTab('sobre'); return false;">Sobre Nós</a>
-        <a href="#" onclick="showTab('servicos'); return false;">Serviços</a>
-        <a href="#" onclick="showTab('contato'); return false;">Contato</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
     </nav>
 
     <main>
         <div id="produtos" class="tab-content">
-            <h2><center>Nossos Produtos</center></h2>
-            <div class="product-grid">
+            <h2 style="text-align:center; color: #0056b3; margin-bottom: 1.5rem;">Nossos Produtos</h2> <div class="product-grid">
                 <div class="product">
                     <img src="https://ultrachama.com.br/wp-content/uploads/2022/04/ultragaz-_0002_p13.png" alt="Botijão de Gás P13 Ultragaz">
                     <h3>Botijão 13kg - Ultragaz</h3>
@@ -619,36 +770,42 @@
             </div>
 
             <div id="localizacao-contato">
+                 <div id="mapa">
+                     <h3>Nossa Localização</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7018800481533!2d-53.40612052524427!3d-24.94222387787603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d52cdd964df7%3A0x7bb526e849e5928b!2sZolet&#39;S%20G%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1743594057964!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+		    </iframe>
+                     <p>R. Serra Negra, 1308 - Morumbi, Cascavel - PR, 85817-670</p>
+                 </div>
                 <div id="contato-whatsapp">
                     <h3>Peça pelo WhatsApp:</h3>
                     <a href="https://wa.me/5545999208741?text=Olá,%20Zolet'S%20Gás!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener noreferrer">
                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/150px-WhatsApp.svg.png" alt="WhatsApp Icon">
                          Fale Conosco
                     </a>
-                    <p style="margin-top: 10px; font-size: 0.9em;">Clique aqui para pedir ou tirar dúvidas!</p>
+                    <p>Clique aqui para pedir ou tirar dúvidas!</p>
                 </div>
-                <div id="mapa">
-                     <h3>Nossa Localização</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7018800481533!2d-53.40612052524427!3d-24.94222387787603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d52cdd964df7%3A0x7bb526e849e5928b!2sZolet'S%20G%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1743518069643!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                     <p style="text-align: center; font-size: 0.9em; margin-top: 5px;">R. Serra Negra, 1308 - Morumbi, Cascavel - PR, 85817-670</p> </div>
             </div>
-            </div>
+        </div>
 
         <div id="sobre" class="tab-content">
              <section class="sobre-nos-container">
-
                  <div class="secao-superior">
                      <div class="foto-lugar">
                          <img src="imagem/sobrenos.jpeg" alt="Foto do espaço Zolet'S Gás">
                      </div>
                      <div class="historia-texto">
                          <h2>Nossa História</h2>
-	                <p>A <strong>Zolet'S Gás</strong> é sua distribuidora de confiança de gás de cozinha (GLP) e água mineral em Cascavel-PR. Com 4 anos de experiência no mercado, nos destacamos pela seriedade, responsabilidade e compromisso com a satisfação dos nossos clientes.</p>
-		        <p>Fundada com o objetivo de oferecer um serviço rápido, seguro e com atendimento diferenciado, nos orgulhamos de ser a escolha número um de muitas famílias e empresas.</p><p>Trabalhamos com as melhores marcas, como a Ultragaz, oferecendo produtos de excelência: botijão de gás 13kg, água mineral 20L, registros reguladores e mangueiras para gás.</p><p>Nossa equipe está sempre pronta para atendê-lo com eficiência, segurança e profissionalismo, garantindo a qualidade e a confiança que você merece. Zolet'S Gás: atendendo Cascavel com dedicação e qualidade!</p>
+                         <p>
+                             A <strong>Zolet'S Gás</strong> é sua distribuidora de confiança de gás de cozinha (GLP) e água mineral em Cascavel-PR e região.
+                         </p>
+                         <p>
+                             Fundada com o objetivo de oferecer um serviço rápido, seguro e com atendimento diferenciado, nos orgulhamos de ser a escolha número um de muitas famílias e empresas.
+                         </p>
+                          <p>
+                             Trabalhamos com as melhores marcas, como a Ultragaz, garantindo a qualidade e a segurança que você merece. Nossa equipe está sempre pronta para atendê-lo da melhor forma possível.
+                         </p>
                      </div>
                  </div>
-
                  <div class="secao-pilares">
                       <h3>Nossos Pilares</h3>
                       <div class="pilares-container">
@@ -660,7 +817,7 @@
                          <div class="pilar">
                               <img src="https://www.cieepr.org.br/wp-content/uploads/2020/01/sobre-nos-visao.svg" alt="Ícone da Visão">
                               <h4>Visão</h4>
-                              <p>Ser a referência em distribuição de gás e água na região de Cascavel-PR, reconhecida pela excelência no atendimento e rapidez na entrega.</p>
+                              <p>Ser a referência em distribuição de gás e água na região, reconhecida pela excelência no atendimento e rapidez na entrega.</p>
                          </div>
                          <div class="pilar">
                               <img src="https://www.cieepr.org.br/wp-content/uploads/2020/04/94640615_716798119057941_7781545884885450752_n.png" alt="Ícone dos Valores">
@@ -672,58 +829,95 @@
             </section>
         </div>
         <div id="servicos" class="tab-content">
-              <h2><center>Nossos Serviços</center></h2>
-              <p>Na <strong>Zolet'S Gás</strong>, você encontra tudo o que precisa com a agilidade que você espera:</p>
-              <ul style="list-style: none; padding-left: 0;">
-                   <li style="margin-bottom: 10px; display: flex; align-items: center;"><img src="https://img.icons8.com/fluency/48/gas-bottle.png" alt="gas icon" style="height:25px; margin-right: 10px;"><strong>Venda de Gás de Cozinha P13 (Ultragaz):</strong> O tradicional botijão azul com a qualidade e segurança que você já conhece.</li>
-                   <li style="margin-bottom: 10px; display: flex; align-items: center;"><img src="https://img.icons8.com/fluency/48/water-bottle.png" alt="water icon" style="height:25px; margin-right: 10px;"><strong>Venda de Água Mineral (Galão 20L):</strong> Água de qualidade para manter sua família hidratada. Consulte as marcas disponíveis.</li>
-                   <li style="margin-bottom: 10px; display: flex; align-items: center;"><img src="https://img.icons8.com/office/16/settings--v1.png" alt="accessories icon" style="height:25px; margin-right: 10px;"><strong>Venda de Acessórios:</strong> Oferecemos registros (reguladores) e mangueiras dentro das normas de segurança.</li>
-                   <li style="margin-bottom: 10px; display: flex; align-items: center;"><img src="https://img.icons8.com/fluency/48/delivery.png" alt="delivery icon" style="height:25px; margin-right: 10px;"><strong>Entrega Rápida:</strong> Compromisso com a agilidade. Peça e receba rapidamente no conforto da sua casa ou empresa em Cascavel-PR.</li>
-                   <li style="margin-bottom: 10px; display: flex; align-items: center;"><img src="https://img.icons8.com/fluency/48/check.png" alt="check icon" style="height:25px; margin-right: 10px;"><strong>Instalação Segura (Opcional):</strong> Ao comprar conosco, podemos auxiliar na verificação da sua instalação (consulte condições).</li>
-                   <li style="margin-bottom: 10px; display: flex; align-items: center;"><img src="https://img.icons8.com/fluency/48/conference-call.png" alt="service icon" style="height:25px; margin-right: 10px;"><strong>Atendimento Personalizado:</strong> Nossa equipe está pronta para tirar suas dúvidas e oferecer o melhor atendimento via telefone ou WhatsApp.</li>
-              </ul>
-              <p><strong>Peça agora mesmo e comprove a qualidade e rapidez da Zolet'S Gás!</strong></p>
-         </div>
+            <h2>Nossos Serviços</h2>
+            <p class="servicos-intro">Na <strong>Zolet'S Gás</strong>, oferecemos soluções completas para suas necessidades de gás e água com a agilidade que você espera:</p>
 
+            <div class="servicos-grid">
 
-        <div id="contato" class="tab-content">
-            <h2><center>Entre em Contato</center></h2>
-            <p>Estamos à sua disposição! Escolha a melhor forma de falar conosco:</p>
-            <div style="line-height: 2.2;">
-                 <p style="display: flex; align-items: center; gap: 10px;">
-                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/50px-WhatsApp.svg.png" alt="WhatsApp Icon" style="height: 20px;">
-                     <strong>WhatsApp:</strong>
-                     <a href="https://wa.me/5545999208741?text=Olá,%20Zolet'S%20Gás!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer">(45) 9 9920-8741</a>
-                 </p>
-                 <p style="display: flex; align-items: center; gap: 10px;">
-                      <img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone Icon" style="height: 20px;">
-                      <strong>Telefone Fixo:</strong> (45) 9 9920-8741
-                 </p>
-                 <p style="display: flex; align-items: center; gap: 10px;">
-                      <img src="https://img.icons8.com/material-outlined/24/000000/new-post.png" alt="Email Icon" style="height: 20px;">
-                      <strong>Email:</strong> <a href="mailto:zoletsgas@gmail.com">zoletsgas@gmail.com</a>
-                 </p>
-                 <p style="display: flex; align-items: center; gap: 10px;">
-                     <img src="https://img.icons8.com/ios-glyphs/30/000000/address.png" alt="Address Icon" style="height: 20px;">
-                     <strong>Endereço:</strong> R. Serra Negra, 1308 - Morumbi, Cascavel - PR, 85817-670
-                 </p>
-                  <p style="display: flex; align-items: center; gap: 10px;">
-                      <img src="https://img.icons8.com/ios-glyphs/30/000000/clock--v1.png" alt="Clock Icon" style="height: 20px;">
-                      <strong>Horário:</strong> Seg a Sáb: 08h-22h | Dom/Feriados: 07h-23h
-                  </p>
+                <div class="servico-card">
+                    <img src="https://img.icons8.com/?size=100&id=ak7cSRIKAfF0&format=png&color=228BE6" alt="Ícone Botijão de Gás" class="servico-icon">
+                    <h4>Venda de Gás P13 (Ultragaz)</h4>
+                    <p>Fornecemos o tradicional botijão azul com a qualidade e segurança Ultragaz, essencial para o seu lar.</p>
+                </div>
+
+                <div class="servico-card">
+                    <img src="https://img.icons8.com/fluency/48/water-bottle.png" alt="Ícone Garrafa de Água" class="servico-icon">
+                    <h4>Venda de Água Mineral 20L</h4>
+                    <p>Água mineral de qualidade em galões de 20 litros para manter sua família sempre hidratada (consulte marcas).</p>
+                </div>
+
+                <div class="servico-card">
+                     <img src="https://img.icons8.com/fluency/48/wrench.png" alt="Ícone Acessórios" class="servico-icon">
+                    <h4>Venda de Acessórios</h4>
+                    <p>Dispomos de registros (reguladores) e mangueiras certificados pelo INMETRO para sua segurança.</p>
+                </div>
+
+                <div class="servico-card">
+                    <img src="https://img.icons8.com/?size=100&id=8290&format=png&color=228BE6" alt="Ícone Entrega" class="servico-icon">
+                    <h4>Entrega Rápida em Cascavel</h4>
+                    <p>Compromisso com a agilidade. Peça e receba gás ou água rapidamente no conforto da sua casa ou empresa.</p>
+                </div>
+
+                <div class="servico-card">
+                     <img src="https://img.icons8.com/?size=100&id=AK2rvkh0cSkZ&format=png&color=000000" alt="Ícone Instalação Segura" class="servico-icon">
+                    <h4>Instalação Segura</h4>
+                    <p>Ao comprar conosco, oferecemos auxílio na verificação e instalação segura do seu botijão (consulte condições).</p>
+                </div>
+
+                <div class="servico-card">
+                    <img src="https://img.icons8.com/fluency/48/conference-call.png" alt="Ícone Atendimento" class="servico-icon">
+                    <h4>Atendimento Personalizado</h4>
+                    <p>Nossa equipe está pronta para tirar suas dúvidas e oferecer o melhor suporte via telefone ou WhatsApp.</p>
+                </div>
+
             </div>
-            <br>
-            <div id="mapa-contato" style="max-width: 1000px; margin: 1rem auto;">
-                 <h3>Nossa Localização</h3>
-                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7018800481533!2d-53.40612052524427!3d-24.94222387787603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d52cdd964df7%3A0x7bb526e849e5928b!2sZolet'S%20G%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1743518069643!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0; max-width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                 </iframe>
+
+            <p class="servicos-cta"><strong>Peça agora mesmo e comprove a qualidade e rapidez da Zolet'S Gás!</strong></p>
+        </div>
+        <div id="contato" class="tab-content">
+            <div class="contato-container">
+                <h2>Entre em Contato</h2>
+                <p class="intro">Estamos à sua disposição! Escolha a melhor forma de falar conosco:</p>
+
+                <div class="contato-info">
+                     <div class="contato-item">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/50px-WhatsApp.svg.png" alt="WhatsApp Icon">
+                         <strong>WhatsApp:</strong>
+                         <a href="https://wa.me/5545999208741?text=Olá,%20Zolet'S%20Gás!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer">(45) 9 9920-8741</a>
+                     </div>
+                     <div class="contato-item">
+                          <img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone Icon">
+                          <strong>Telefone:</strong> (45) 9 9920-8741 </div>
+                     <div class="contato-item">
+                          <img src="https://img.icons8.com/material-outlined/24/000000/new-post.png" alt="Email Icon">
+                          <strong>Email:</strong> <a href="mailto:zoletsgas@gmail.com">zoletsgas@gmail.com</a>
+                     </div>
+                     <div class="contato-item">
+                         <img src="https://img.icons8.com/ios-glyphs/30/000000/address.png" alt="Address Icon">
+                         <strong>Endereço:</strong> R. Serra Negra, 1308 - Morumbi, Cascavel - PR
+                     </div>
+                      <div class="contato-item">
+                          <img src="https://img.icons8.com/ios-glyphs/30/000000/clock--v1.png" alt="Clock Icon">
+                          <strong>Horário:</strong> Seg a Sáb: 08h-22h | Dom/Feriados: 07h-23h
+                      </div>
+                </div>
+
+                <div id="mapa-contato">
+                     <h3>Nossa Localização</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7018800481533!2d-53.40612052524427!3d-24.94222387787603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d52cdd964df7%3A0x7bb526e849e5928b!2sZolet&#39;S%20G%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1743594057964!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+	            </iframe>
+                </div>
             </div>
         </div>
-
-    </main>
+        </main>
 
     <footer>
-         <center><p>©2025 Zolet'S Gás Todos os direitos reservados.</p><center>
+         <p>© Zolet'S Gás <span id="current-year"></span> | Todos os direitos reservados | Cascavel-PR</p>
      </footer>
+
+     <script>
+         // Adiciona o ano atual ao rodapé
+         document.getElementById('current-year').textContent = new Date().getFullYear();
+     </script>
 </body>
 </html>
