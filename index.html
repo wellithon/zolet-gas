@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zolet'S Gás - Distribuidora Ultragaz em Cascavel-PR | Qualidade e Confiança</title>
     <meta name="description" content="Zolet'S Gás: Sua distribuidora Ultragas de confiança em Cascavel-PR. Oferecemos botijão de gás P13, galão de água 20L, mangueiras e registros com entrega rápida e segura.">
     <meta name="keywords" content="Zolet'S Gás, Ultragas Cascavel, gás de cozinha Cascavel, entrega de gás Cascavel, botijão P13, galão de água Cascavel, mangueira de gás, registro de gás, gás GLP Cascavel">
@@ -13,7 +14,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="imagem/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -30,21 +31,21 @@
         ::-webkit-scrollbar-thumb {
             background: #005A9C;
             border-radius: 10px;
-            border: 2px solid #e0f2fe; /* Adiciona uma borda para melhor contraste */
+            border: 2px solid #e0f2fe;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #004170;
         }
         .hero-bg {
-            background: linear-gradient(135deg, #0061A8 0%, #003D6B 100%); /* Ajuste no gradiente */
+            background: linear-gradient(135deg, #0061A8 0%, #003D6B 100%);
         }
         .product-card, .mission-card {
             transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-            border: 1px solid #e2e8f0; /* Borda sutil */
+            border: 1px solid #e2e8f0;
         }
         .product-card:hover, .mission-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 76, 132, 0.2); /* Sombra mais pronunciada */
+            box-shadow: 0 15px 30px rgba(0, 76, 132, 0.2);
         }
         .modal {
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -53,7 +54,7 @@
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
         .btn-primary {
-            background-color: #FF8C00; /* Laranja vibrante para CTA primário */
+            background-color: #FF8C00; /* Laranja vibrante */
             color: white;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -85,15 +86,20 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         .section-title {
-            font-size: 2.8rem; /* 44.8px */
+            font-size: 2.2rem; /* Ajustado para melhor responsividade */
             font-weight: 700;
             color: #003D6B;
-            margin-bottom: 2.5rem; /* 40px */
+            margin-bottom: 2.5rem;
             text-align: center;
             position: relative;
             padding-bottom: 0.5rem;
         }
-        .section-title::after { /* Adiciona um sublinhado decorativo sutil */
+        @media (min-width: 768px) { /* md breakpoint */
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -101,24 +107,24 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: #FF8C00; /* Laranja */
+            background-color: #FF8C00;
             border-radius: 2px;
         }
          .nav-link {
             position: relative;
             transition: color 0.3s ease;
-            font-weight: 500; /* Peso médio para links */
+            font-weight: 500;
         }
         .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px; /* Ajuste para não sobrepor o texto */
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
             background-color: #FF8C00;
-            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição mais suave */
+            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .nav-link:hover::after, .nav-link.active-nav-link::after {
             width: 100%;
@@ -127,8 +133,8 @@
             color: #004170;
         }
         .active-nav-link {
-             color: #003D6B !important; /* Cor mais escura para link ativo */
-             font-weight: 700; /* Mais destaque */
+             color: #003D6B !important;
+             font-weight: 700;
         }
         .mission-card i {
             transition: transform 0.3s ease;
@@ -136,14 +142,36 @@
         .mission-card:hover i {
             transform: scale(1.1);
         }
+        /* Estilos para o menu hamburger */
+        #mobileMenu.hidden {
+            display: none;
+        }
+        /* Garante que a imagem do produto no card não exceda uma altura máxima e mantenha a proporção */
+        .product-card img {
+            max-height: 160px; /* Ajuste conforme necessário */
+            object-fit: contain; /* ou 'cover' dependendo do efeito desejado */
+            width: 100%; /* Garante que a imagem ocupe a largura do container */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Imagem do produto no modal */
+        #modalProductImageContainer img {
+            max-height: 200px; /* Ajuste para o modal */
+            object-fit: contain;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800"> <header id="header" class="bg-white shadow-lg fixed w-full z-50 top-0 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#inicio" class="text-3xl font-bold text-blue-700 hover:text-blue-600 transition-colors">
+<body class="bg-slate-50 text-slate-800">
+    <header id="header" class="bg-white shadow-lg fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl sm:text-3xl font-bold text-blue-700 hover:text-blue-600 transition-colors">
                 Zolet<span class="text-blue-500">'S</span> Gás
             </a>
-            <nav>
+            <nav class="hidden md:block">
                 <ul class="flex space-x-4 md:space-x-6">
                     <li><a href="#inicio" class="nav-link text-slate-700 hover:text-blue-600 px-2 py-1">Início</a></li>
                     <li><a href="#produtos" class="nav-link text-slate-700 hover:text-blue-600 px-2 py-1">Produtos</a></li>
@@ -151,74 +179,89 @@
                     <li><a href="#contato" class="nav-link text-slate-700 hover:text-blue-600 px-2 py-1">Contato</a></li>
                 </ul>
             </nav>
+            <div class="md:hidden">
+                <button id="hamburgerBtn" class="text-slate-700 hover:text-blue-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-md">
+            <ul class="flex flex-col items-center py-2">
+                <li><a href="#inicio" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Início</a></li>
+                <li><a href="#produtos" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Produtos</a></li>
+                <li><a href="#sobre" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Sobre</a></li>
+                <li><a href="#contato" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Contato</a></li>
+            </ul>
         </div>
     </header>
 
-    <section id="inicio" class="hero-bg text-white pt-36 pb-24 min-h-screen flex items-center"> <div class="container mx-auto px-6 text-center">
-            <img src="https://placehold.co/160x160/FFFFFF/005A9C?text=Ultragaz&font=Inter" alt="[Ultragaz em destaque Cascavel-PR]" class="mx-auto mb-10 rounded-full shadow-2xl border-4 border-white" style="width: 160px; height: 160px;">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-md">Zolet'S Gás</h1>
-            <p class="text-2xl md:text-3xl mb-8 font-light drop-shadow-sm">Sua distribuidora <strong class="font-semibold">Ultragaz</strong> de confiança em Cascavel!</p>
-            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">Garantimos qualidade, segurança e agilidade na entrega do seu gás de cozinha e água mineral. Seu conforto é nossa prioridade.</p>
-            <a href="#produtos" class="btn-primary py-4 px-10 rounded-lg text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center">
-                Nossos Produtos <i class="fas fa-arrow-right ml-3"></i>
+    <section id="inicio" class="hero-bg text-white pt-32 pb-20 md:pt-36 md:pb-24 min-h-screen flex items-center">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <img src="https://placehold.co/120x120/FFFFFF/005A9C?text=Ultragaz&font=Inter" 
+                 alt="[Ultragaz em destaque Cascavel-PR]" 
+                 class="mx-auto mb-8 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full shadow-2xl border-2 sm:border-4 border-white"
+                 onerror="this.onerror=null; this.src='https://placehold.co/160x160/CCCCCC/969696?text=Imagem+Indisponível';">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 drop-shadow-md">Zolet'S Gás</h1>
+            <p class="text-xl sm:text-2xl md:text-3xl mb-6 md:mb-8 font-light drop-shadow-sm">Sua distribuidora <strong class="font-semibold">Ultragaz</strong> de confiança em Cascavel!</p>
+            <p class="text-base sm:text-lg md:text-xl mb-10 md:mb-12 max-w-xl md:max-w-3xl mx-auto leading-relaxed">Garantimos qualidade, segurança e agilidade na entrega do seu gás de cozinha e água mineral. Seu conforto é nossa prioridade.</p>
+            <a href="#produtos" class="btn-primary py-3 px-8 sm:py-4 sm:px-10 rounded-lg text-md sm:text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center">
+                Nossos Produtos <i class="fas fa-arrow-right ml-2 sm:ml-3"></i>
             </a>
         </div>
     </section>
 
-    <section id="produtos" class="py-24 bg-sky-50"> <div class="container mx-auto px-6">
+    <section id="produtos" class="py-16 md:py-24 bg-sky-50">
+        <div class="container mx-auto px-4 sm:px-6">
             <h2 class="section-title">Nossos Produtos</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="product-card bg-white p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="botijao13kg">
-                    <div>
-                        <img src="imagem/BOTIJÃO DE COZINHA 13KG CASCAVEL-PR.JPG" alt="Água Mineral 20L Cascavel-PR">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Botijão de Gás P13</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="botijao13kg">
+                    <div class="flex-grow">
+                        <img src="imagem/BOTIJÃO DE COZINHA 13KG CASCAVEL-PR.JPG" alt="[Botijão de Gás P13 Ultragaz em Cascavel-PR]" class="rounded-md mb-4">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Botijão de Gás P13</h3>
                         <p class="text-slate-600 text-sm mb-4">O tradicional para sua cozinha. Segurança e qualidade Ultragaz.</p>
                     </div>
                     <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-5 rounded-lg text-sm font-medium w-full">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Botijão%20de%20Gás%20P13%20Ultragaz." target="_blank" class="btn-whatsapp py-2 px-5 rounded-lg text-sm font-medium w-full inline-flex items-center justify-center">
+                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
+                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Botijão%20de%20Gás%20P13%20Ultragaz." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
                             <i class="fab fa-whatsapp mr-2"></i> Comprar
                         </a>
                     </div>
                 </div>
-
-                <div class="product-card bg-white p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="galao20l">
-                    <div>
-                        <img src="imagem/GALÃO 20L CASCAVEL-PR.JPG" alt="Água Mineral 20L Cascavel-PR">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Galão de Água 20L</h3>
+                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="galao20l">
+                    <div class="flex-grow">
+                        <img src="imagem/GALÃO 20L CASCAVEL-PR.JPG" alt="[Galão de Água Mineral 20L em Cascavel-PR]" class="rounded-md mb-4">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Galão de Água 20L</h3>
                         <p class="text-slate-600 text-sm mb-4">Água mineral de qualidade para sua hidratação e saúde.</p>
                     </div>
                     <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-5 rounded-lg text-sm font-medium w-full">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Galão%20de%20Água%2020L." target="_blank" class="btn-whatsapp py-2 px-5 rounded-lg text-sm font-medium w-full inline-flex items-center justify-center">
+                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
+                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Galão%20de%20Água%2020L." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
                             <i class="fab fa-whatsapp mr-2"></i> Comprar
                         </a>
                     </div>
                 </div>
-
-                <div class="product-card bg-white p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="mangueira">
-                    <div>
-                        <img src="imagem/MANGUEIRA CASCAVEL-PR.JPG" alt="Botijão de Gás P13 Ultragaz">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Mangueira para Gás</h3>
+                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="mangueira">
+                    <div class="flex-grow">
+                         <img src="imagem/MANGUEIRA CASCAVEL-PR.JPG" alt="[Mangueira para Gás em Cascavel-PR]" class="rounded-md mb-4">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Mangueira para Gás</h3>
                         <p class="text-slate-600 text-sm mb-4">Certificada e segura, dentro das normas de validade.</p>
                     </div>
                     <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-5 rounded-lg text-sm font-medium w-full">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20uma%20Mangueira%20para%20Gás." target="_blank" class="btn-whatsapp py-2 px-5 rounded-lg text-sm font-medium w-full inline-flex items-center justify-center">
+                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
+                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20uma%20Mangueira%20para%20Gás." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
                             <i class="fab fa-whatsapp mr-2"></i> Comprar
                         </a>
                     </div>
                 </div>
-
-                <div class="product-card bg-white p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="registro">
-                    <div>
-                        <img src="imagem/REGISTRO CASCAVEL-PR.JPG" alt="Botijão de Gás P13 Ultragaz">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Registro para Gás</h3>
+                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="registro">
+                    <div class="flex-grow">
+                        <img src="imagem/REGISTRO CASCAVEL-PR.JPG" alt="[Registro para Gás em Cascavel-PR]" class="rounded-md mb-4">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Registro para Gás</h3>
                         <p class="text-slate-600 text-sm mb-4">Essencial para a segurança da sua instalação de gás.</p>
                     </div>
                     <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-5 rounded-lg text-sm font-medium w-full">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Registro%20para%20Gás." target="_blank" class="btn-whatsapp py-2 px-5 rounded-lg text-sm font-medium w-full inline-flex items-center justify-center">
+                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
+                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Registro%20para%20Gás." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
                             <i class="fab fa-whatsapp mr-2"></i> Comprar
                         </a>
                     </div>
@@ -227,48 +270,42 @@
         </div>
     </section>
 
-    <section id="sobre" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
+    <section id="sobre" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
             <h2 class="section-title">Nossa Trajetória</h2>
-            <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-16 md:mb-20">
                 <div class="order-2 md:order-1">
-                    <img src="imagem/sobrenos.jpeg" alt="[Imagem ilustrativa da história da Zolet'S Gás Cascavel-PR]" class="rounded-xl shadow-xl w-full object-cover">
+                    <img src="imagem/sobrenos.jpeg" alt="[Imagem ilustrativa da história da Zolet'S Gás Cascavel-PR]" class="rounded-xl shadow-xl w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/969696?text=Imagem+Indisponível';">
                 </div>
-                <div class="text-lg text-slate-700 space-y-5 order-1 md:order-2">
-                    <h3 class="text-3xl font-semibold text-blue-700 mb-4">A História da Zolet'S Gás</h3>
-                    <p>Com profissionalismo e dedicação, a <strong>Zolet'S Gás</strong> é sua distribuidora de confiança de gás de cozinha (GLP) e água mineral na cidade de Cascavel, Paraná.
-	            </p>
-	            <p>Há 4 anos no mercado, nossa trajetória é marcada pela seriedade, responsabilidade e um firme compromisso com a satisfação de cada cliente em Cascavel.
-		    </p>
-		    <p>Fundada com o objetivo de oferecer um serviço rápido, seguro e com atendimento diferenciado, a Zolet'S Gás orgulha-se de ser a escolha número um de inúmeras famílias e empresas em Cascavel.
-		    </p>
-		    <p>Trabalhamos exclusivamente com marcas de excelência, como a Ultragaz, garantindo a qualidade e a segurança que você merece. Oferecemos botijões de gás de 13kg, água mineral em galões de 20L, registros reguladores e mangueiras para gás.
-		    </p>
-		    <p>Nossa equipe está sempre pronta para atendê-lo da melhor forma possível, com eficiência, segurança e o profissionalismo que você merece, exclusivamente em Cascavel.
-		   </p>
-		    <p>Na <strong>Zolet'S Gás</strong>, nossa prioridade é a sua tranquilidade e a qualidade dos produtos que chegam até você. Atendendo Cascavel com dedicação e a confiança que nos tornou referência!
-		    </p>
+                <div class="text-base sm:text-lg text-slate-700 space-y-4 md:space-y-5 order-1 md:order-2">
+                    <h3 class="text-2xl sm:text-3xl font-semibold text-blue-700 mb-3 md:mb-4">A História da Zolet'S Gás</h3>
+                    <p>Com profissionalismo e dedicação, a <strong>Zolet'S Gás</strong> é sua distribuidora de confiança de gás de cozinha (GLP) e água mineral na cidade de Cascavel, Paraná.</p>
+                    <p>Há 4 anos no mercado, nossa trajetória é marcada pela seriedade, responsabilidade e um firme compromisso com a satisfação de cada cliente em Cascavel.</p>
+                    <p>Fundada com o objetivo de oferecer um serviço rápido, seguro e com atendimento diferenciado, a Zolet'S Gás orgulha-se de ser a escolha número um de inúmeras famílias e empresas em Cascavel.</p>
+                    <p>Trabalhamos exclusivamente com marcas de excelência, como a Ultragaz, garantindo a qualidade e a segurança que você merece. Oferecemos botijões de gás de 13kg, água mineral em galões de 20L, registros reguladores e mangueiras para gás.</p>
+                    <p>Nossa equipe está sempre pronta para atendê-lo da melhor forma possível, com eficiência, segurança e o profissionalismo que você merece, exclusivamente em Cascavel.</p>
+                    <p>Na <strong>Zolet'S Gás</strong>, nossa prioridade é a sua tranquilidade e a qualidade dos produtos que chegam até você. Atendendo Cascavel com dedicação e a confiança que nos tornou referência!</p>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="mission-card bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-xl">
-                    <i class="fas fa-bullseye text-5xl text-blue-600 mb-6"></i>
-                    <h4 class="text-2xl font-semibold text-blue-700 mb-3">Nossa Missão</h4>
-                    <p class="text-slate-600 leading-relaxed">Fornecer gás GLP Ultragaz e água mineral com excelência, agilidade e segurança, contribuindo para o bem-estar e a comodidade dos nossos clientes em Cascavel e região, sempre com um atendimento humanizado e eficiente.</p>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-center">
+                <div class="mission-card bg-slate-50 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl">
+                    <i class="fas fa-bullseye text-4xl sm:text-5xl text-blue-600 mb-4 md:mb-6"></i>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Nossa Missão</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">Fornecer gás GLP Ultragas e água mineral com excelência, agilidade e segurança, contribuindo para o bem-estar e a comodidade dos nossos clientes em Cascavel e região, sempre com um atendimento humanizado e eficiente.</p>
                 </div>
-                <div class="mission-card bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-xl">
-                    <i class="fas fa-eye text-5xl text-green-500 mb-6"></i>
-                    <h4 class="text-2xl font-semibold text-blue-700 mb-3">Nossa Visão</h4>
-                    <p class="text-slate-600 leading-relaxed">Ser reconhecida como a principal e mais confiável distribuidora de gás e água da região, inovando continuamente em nossos serviços e processos, e expandindo nossa atuação de forma sustentável.</p>
+                <div class="mission-card bg-slate-50 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl">
+                    <i class="fas fa-eye text-4xl sm:text-5xl text-green-500 mb-4 md:mb-6"></i>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Nossa Visão</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">Ser reconhecida como a principal e mais confiável distribuidora de gás e água da região, inovando continuamente em nossos serviços e processos, e expandindo nossa atuação de forma sustentável.</p>
                 </div>
-                <div class="mission-card bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-xl">
-                    <i class="fas fa-heart text-5xl text-red-500 mb-6"></i>
-                    <h4 class="text-2xl font-semibold text-blue-700 mb-3">Nossos Valores</h4>
-                    <ul class="text-slate-600 space-y-2 leading-relaxed list-none">
+                <div class="mission-card bg-slate-50 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl">
+                    <i class="fas fa-heart text-4xl sm:text-5xl text-red-500 mb-4 md:mb-6"></i>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Nossos Valores</h4>
+                    <ul class="text-slate-600 space-y-1 sm:space-y-2 leading-relaxed list-none text-sm sm:text-base">
                         <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Compromisso com o Cliente</li>
                         <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Segurança em Primeiro Lugar</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Qualidade Ultragaz</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Qualidade Ultragas</li>
                         <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Ética e Transparência</li>
                         <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Agilidade e Eficiência</li>
                         <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Valorização da Equipe</li>
@@ -278,91 +315,92 @@
         </div>
     </section>
 
-    <section id="contato" class="py-24 bg-slate-100"> <div class="container mx-auto px-6">
+    <section id="contato" class="py-16 md:py-24 bg-slate-100">
+        <div class="container mx-auto px-4 sm:px-6">
             <h2 class="section-title">Entre em Contato</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div class="space-y-8 bg-white p-8 rounded-xl shadow-xl">
-                    <p class="text-lg text-slate-700">Tem alguma dúvida, quer fazer seu pedido ou saber mais? Fale conosco! Estamos prontos para atender você.</p>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-phone-alt text-3xl text-blue-600"></i>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <div class="space-y-6 bg-white p-6 sm:p-8 rounded-xl shadow-xl">
+                    <p class="text-md sm:text-lg text-slate-700">Tem alguma dúvida, quer fazer seu pedido ou saber mais? Fale conosco! Estamos prontos para atender você.</p>
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <i class="fas fa-phone-alt text-2xl sm:text-3xl text-blue-600"></i>
                         <div>
-                            <h4 class="font-semibold text-slate-800">Telefone:</h4>
-                            <a href="tel:+5545999999999" class="text-xl text-slate-700 hover:text-blue-600 transition-colors">(45) 99999-9999</a>
+                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">Telefone:</h4>
+                            <a href="tel:+5545999999999" class="text-lg sm:text-xl text-slate-700 hover:text-blue-600 transition-colors">(45) 99999-9999</a>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fab fa-whatsapp text-4xl text-green-500"></i>
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <i class="fab fa-whatsapp text-3xl sm:text-4xl text-green-500"></i>
                         <div>
-                            <h4 class="font-semibold text-slate-800">WhatsApp:</h4>
-                            <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Zolet'S%20Gás." target="_blank" class="text-xl text-slate-700 hover:text-green-600 transition-colors">(45) 99999-9999</a>
+                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">WhatsApp:</h4>
+                            <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Zolet'S%20Gás." target="_blank" class="text-lg sm:text-xl text-slate-700 hover:text-green-600 transition-colors">(45) 99999-9999</a>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-envelope text-3xl text-blue-600"></i>
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <i class="fas fa-envelope text-2xl sm:text-3xl text-blue-600"></i>
                         <div>
-                            <h4 class="font-semibold text-slate-800">E-mail:</h4>
-                            <a href="mailto:contato@zoletsgas.com.br" class="text-xl text-slate-700 hover:text-blue-600 transition-colors">contato@zoletsgas.com.br</a>
+                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">E-mail:</h4>
+                            <a href="mailto:contato@zoletsgas.com.br" class="text-lg sm:text-xl text-slate-700 hover:text-blue-600 transition-colors break-all">contato@zoletsgas.com.br</a>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <i class="fas fa-map-marker-alt text-3xl text-blue-600 mt-1"></i>
+                    <div class="flex items-start space-x-3 sm:space-x-4">
+                        <i class="fas fa-map-marker-alt text-2xl sm:text-3xl text-blue-600 mt-1"></i>
                         <div>
-                            <h4 class="font-semibold text-slate-800">Nosso Endereço:</h4>
-                            <p class="text-slate-600">Rua Exemplo de Endereço, 123 - Bairro Modelo</p>
-                            <p class="text-slate-600">Cascavel - PR, CEP 85800-000</p>
+                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">Nosso Endereço:</h4>
+                            <p class="text-slate-600 text-sm sm:text-base">Rua Exemplo de Endereço, 123 - Bairro Modelo</p>
+                            <p class="text-slate-600 text-sm sm:text-base">Cascavel - PR, CEP 85800-000</p>
                         </div>
                     </div>
-                     <div class="mt-6 pt-6 border-t border-slate-200">
-                        <h4 class="font-semibold text-slate-800 mb-2">Horário de Funcionamento:</h4>
-                        <p class="text-slate-600">Segunda a Sábado: 08:00 - 19:00</p>
-                        <p class="text-slate-600">Domingos e Feriados: 08:00 - 12:00</p>
+                     <div class="mt-4 pt-4 border-t border-slate-200">
+                        <h4 class="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">Horário de Funcionamento:</h4>
+                        <p class="text-slate-600 text-sm sm:text-base">Segunda a Sábado: 08:00 - 19:00</p>
+                        <p class="text-slate-600 text-sm sm:text-base">Domingos e Feriados: 08:00 - 12:00</p>
                     </div>
                 </div>
-                <div class="h-full min-h-[400px] md:min-h-full">
-                    <div class="rounded-xl shadow-xl overflow-hidden h-[500px] md:h-full">
+                <div class="h-full min-h-[300px] sm:min-h-[400px] md:min-h-full">
+                    <div class="rounded-xl shadow-xl overflow-hidden h-[300px] sm:h-[400px] md:h-full">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7018800481533!2d-53.40612052524427!3d-24.94222387787603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d52cdd964df7%3A0x7bb526e849e5928b!2sZolet&#39;S%20G%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1743594057964!5m2!1spt-BR!2sbr"
-                            width="100%"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7018800481533!2d-53.40612052524427!3d-24.94222387787603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d52cdd964df7%3A0x7bb526e849e5928b!2sZolet'S%20G%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1743594057964!5m2!1spt-BR!2sbr" width="100%"
                             height="100%"
                             style="border:0;"
                             allowfullscreen=""
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Localização da Zolet'S Gás em Cascavel-PR">
+                            title="[Localização da Zolet'S Gás em Cascavel-PR]">
                         </iframe>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-blue-800 text-blue-100 py-10 text-center">
-        <div class="container mx-auto px-6">
-            <p class="mb-2">©️ <span id="currentYear"></span> Zolet'S Gás. Todos os direitos reservados.</p>
-            <p class="text-sm text-blue-200">Cascavel-PR</p>
-            <p class="text-xs text-blue-300 mt-4">Desenvolvido com <i class="fas fa-heart text-red-400"></i></p>
+    <footer class="bg-blue-800 text-blue-100 py-8 md:py-10 text-center">
+        <div class="container mx-auto px-4 sm:px-6">
+            <p class="mb-1 sm:mb-2 text-sm sm:text-base">©️ <span id="currentYear"></span> Zolet'S Gás. Todos os direitos reservados.</p>
+            <p class="text-xs sm:text-sm text-blue-200">Cascavel-PR</p>
+            <p class="text-xs text-blue-300 mt-3 sm:mt-4">Desenvolvido com <i class="fas fa-heart text-red-400"></i></p>
         </div>
     </footer>
 
-    <div id="productModal" class="modal fixed inset-0 bg-black/80 flex items-center justify-center p-4 opacity-0 invisible z-[100]"> <div class="modal-content bg-white p-8 rounded-xl shadow-2xl w-full max-w-lg transform scale-95 opacity-0">
-            <div class="flex justify-between items-center mb-6">
-                <h3 id="modalProductName" class="text-3xl font-bold text-blue-700">Nome do Produto</h3>
-                <button id="closeModalBtn" class="text-slate-500 hover:text-red-600 text-4xl font-light leading-none">&times;</button>
+    <div id="productModal" class="modal fixed inset-0 bg-black/80 flex items-center justify-center p-4 opacity-0 invisible z-[100]">
+        <div class="modal-content bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-md sm:max-w-lg transform scale-95 opacity-0">
+            <div class="flex justify-between items-center mb-4 sm:mb-6">
+                <h3 id="modalProductName" class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-700">Nome do Produto</h3>
+                <button id="closeModalBtn" class="text-slate-500 hover:text-red-600 text-3xl sm:text-4xl font-light leading-none">×</button>
             </div>
-            <div class="text-center mb-6">
-                <div id="modalProductImageContainer" class="w-40 h-40 mx-auto mb-4 flex items-center justify-center text-blue-600">
+            <div class="text-center mb-4 sm:mb-6">
+                <div id="modalProductImageContainer" class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-3 sm:mb-4 flex items-center justify-center text-blue-600">
                    </div>
             </div>
-            <p id="modalProductDescription" class="text-slate-700 mb-5 text-lg leading-relaxed"></p>
-            <div class="bg-sky-50 p-4 rounded-md">
-                <h5 class="font-semibold text-blue-700 mb-2">Detalhes Adicionais:</h5>
-                <p id="modalProductDetails" class="text-slate-600 text-sm leading-relaxed"></p>
+            <p id="modalProductDescription" class="text-slate-700 mb-4 sm:mb-5 text-base sm:text-lg leading-relaxed"></p>
+            <div class="bg-sky-50 p-3 sm:p-4 rounded-md">
+                <h5 class="font-semibold text-blue-700 mb-1 sm:mb-2 text-sm sm:text-base">Detalhes Adicionais:</h5>
+                <p id="modalProductDetails" class="text-slate-600 text-xs sm:text-sm leading-relaxed"></p>
             </div>
-            <div class="mt-8 flex justify-between">
-                <a id="whatsappButton" href="#" target="_blank" class="btn-whatsapp py-3 px-6 rounded-lg text-base inline-flex items-center">
+            <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between gap-3 sm:gap-0">
+                <a id="whatsappButtonModal" href="#" target="_blank" class="btn-whatsapp py-2 px-4 sm:py-3 sm:px-6 rounded-lg text-sm sm:text-base inline-flex items-center justify-center w-full sm:w-auto">
                     <i class="fab fa-whatsapp mr-2"></i> Comprar via WhatsApp
                 </a>
-                <button id="closeModalBtnBottom" class="btn-secondary py-3 px-6 rounded-lg text-base">Fechar</button>
+                <button id="closeModalBtnBottom" class="btn-secondary py-2 px-4 sm:py-3 sm:px-6 rounded-lg text-sm sm:text-base w-full sm:w-auto">Fechar</button>
             </div>
         </div>
     </div>
@@ -371,29 +409,30 @@
         // Atualiza o ano no rodapé
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Dados dos produtos
+        // Dados dos produtos com os caminhos das imagens originais para o modal
         const productsData = {
             botijao13kg: {
                 name: 'Botijão de Gás P13 Ultragaz',
-                imageSvg: `<img src="imagem/BOTIJÃO DE COZINHA 13KG CASCAVEL-PR.JPG" alt="Água Mineral 20L Cascavel-PR"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 3C8 2.44772 8.44772 2 9 2H15C15.5523 2 16 2.44772 16 3V4H8V3ZM6 5C4.89543 5 4 5.89543 4 7V19C4 20.6569 5.34315 22 7 22H17C18.6569 22 20 20.6569 20 19V7C20 5.89543 19.1046 5 18 5H6ZM12 7C12.5523 7 13 7.44772 13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7Z"/></svg>`,
+                // Usando o mesmo caminho da imagem do card para consistência no modal
+                imagePath: 'imagem/BOTIJÃO DE COZINHA 13KG CASCAVEL-PR.JPG', 
                 description: 'O tradicional botijão de 13kg, ideal para sua cozinha. Qualidade e segurança Ultragaz que você já conhece e confia.',
                 details: 'Capacidade: 13kg. Gás GLP de alta pureza. Perfeito para fogões residenciais e pequenos comércios. Atende aos mais altos padrões de segurança da ANP. Entrega rápida em toda Cascavel-PR.'
             },
             galao20l: {
                 name: 'Galão de Água Mineral 20L',
-                imageSvg: `<img src="imagem/GALÃO 20L CASCAVEL-PR.JPG" alt="Água Mineral 20L Cascavel-PR"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 3H19C19.5523 3 20 3.44772 20 4V6H4V4C4 3.44772 4.44772 3 5 3ZM3 7V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V7H3ZM12 9C11.4477 9 11 9.44772 11 10V15C11 15.5523 11.4477 16 12 16C12.5523 16 13 15.5523 13 15V10C13 9.44772 12.5523 9 12 9Z"/></svg>`,
+                imagePath: 'imagem/GALÃO 20L CASCAVEL-PR.JPG',
                 description: 'Água mineral de fonte natural, leve e saudável. Essencial para a hidratação de toda a família e para o seu bem-estar diário.',
                 details: 'Volume: 20 litros. Embalagem retornável e higienizada. Ideal para residências, escritórios e eventos. Verifique nossas opções de fontes e marcas.'
             },
             mangueira: {
                 name: 'Mangueira para Gás de Cozinha',
-                imageSvg: `<img src="imagem/MANGUEIRA CASCAVEL-PR.JPG" alt="Botijão de Gás P13 Ultragaz"><path d="M4 12C4 7.58172 7.58172 4 12 4C13.6376 4 15.1656 4.46871 16.4694 5.27239" stroke-linecap="round"/><path d="M8 19C9.10457 19 10 18.1046 10 17C10 15.8954 9.10457 15 8 15" stroke-linecap="round"/><path d="M16 19C17.1046 19 18 18.1046 18 17C18 15.8954 17.1046 15 16 15" stroke-linecap="round"/><path d="M10 17H14" stroke-linecap="round"/><path d="M12 4V8M12 8C12 8 10 8 8.5 9.5C7 11 7 13 8.5 14.5C10 16 12 16 12 16M12 8C12 8 14 8 15.5 9.5C17 11 17 13 15.5 14.5C14 16 12 16 12 16" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+                imagePath: 'imagem/MANGUEIRA CASCAVEL-PR.JPG',
                 description: 'Mangueira trançada de PVC com validade, certificada pelo INMETRO. Essencial para a segurança da sua instalação de gás.',
                 details: 'Comprimento padrão: 1,25m (outros tamanhos sob consulta). Material: PVC flexível com reforço interno. Conexões: Padrão para botijões P13 e fogões. Verifique a data de validade antes de usar.'
             },
             registro: {
                 name: 'Registro Regulador de Gás',
-                imageSvg: `<img src="imagem/REGISTRO CASCAVEL-PR.JPG" alt="Botijão de Gás P13 Ultragaz"> <path d="M12 2C10.3431 2 9 3.34315 9 5V6H7C5.89543 6 5 6.89543 5 8V16C5 17.1046 5.89543 18 7 18H9V19C9 20.6569 10.3431 22 12 22C13.6569 22 15 20.6569 15 19V18H17C18.1046 18 19 17.1046 19 16V8C19 6.89543 18.1046 6 17 6H15V5C15 3.34315 13.6569 2 12 2ZM12 4C12.5523 4 13 4.44772 13 5V6H11V5C11 4.44772 11.4477 4 12 4ZM7 8H17V16H7V8Z"/><path d="M12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10Z"/></svg>`,
+                imagePath: 'imagem/REGISTRO CASCAVEL-PR.JPG',
                 description: 'Regulador de pressão para gás GLP, com selo do INMETRO. Garante o fluxo correto e seguro de gás para seu fogão.',
                 details: 'Modelo: Baixa pressão, para uso doméstico. Vazão: Conforme padrão (ex: 1kg/h). Conexão de entrada: Padrão botijão P13. Conexão de saída: Padrão para mangueira. Verifique a validade e substitua conforme recomendação do fabricante.'
             }
@@ -405,48 +444,56 @@
         const modalProductImageContainer = document.getElementById('modalProductImageContainer');
         const modalProductDescription = document.getElementById('modalProductDescription');
         const modalProductDetails = document.getElementById('modalProductDetails');
-        const whatsappButton = document.getElementById('whatsappButton');
+        const whatsappButtonModal = document.getElementById('whatsappButtonModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
         const closeModalBtnBottom = document.getElementById('closeModalBtnBottom');
 
         document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const productId = card.dataset.productId;
-                const product = productsData[productId];
+            // Adiciona o event listener ao card, mas especificamente ao botão "Ver Detalhes"
+            const detailsButton = card.querySelector('.btn-secondary');
+            if (detailsButton) {
+                detailsButton.addEventListener('click', () => {
+                    const productId = card.dataset.productId;
+                    const product = productsData[productId];
 
-                if (product) {
-                    modalProductName.textContent = product.name;
-                    modalProductImageContainer.innerHTML = product.imageSvg || `<img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain">`;
-                    modalProductDescription.textContent = product.description;
-                    modalProductDetails.textContent = product.details;
-                    
-                    // Configura o botão do WhatsApp no modal
-                    whatsappButton.href = `https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20${encodeURIComponent(product.name)}.`;
+                    if (product) {
+                        modalProductName.textContent = product.name;
+                        // Usa o imagePath para carregar a imagem no modal
+                        modalProductImageContainer.innerHTML = `<img src="${product.imagePath}" alt="${product.name}" class="rounded-md" onerror="this.onerror=null; this.src='https://placehold.co/200x150/CCCCCC/969696?text=Imagem Indisponível';">`;
+                        modalProductDescription.textContent = product.description;
+                        modalProductDetails.textContent = product.details;
+                        
+                        whatsappButtonModal.href = `https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20${encodeURIComponent(product.name)}.`;
 
-                    productModal.classList.remove('invisible');
-                    productModal.classList.add('visible', 'opacity-100');
-                    modalContent.classList.remove('scale-95', 'opacity-0');
-                    modalContent.classList.add('scale-100', 'opacity-100');
-                    document.body.style.overflow = 'hidden'; // Impede scroll da página ao fundo
-                }
-            });
+                        productModal.classList.remove('invisible', 'opacity-0');
+                        productModal.classList.add('visible');
+                        productModal.offsetHeight; 
+                        productModal.classList.add('opacity-100');
+
+                        modalContent.classList.remove('scale-95', 'opacity-0');
+                        modalContent.classList.add('scale-100', 'opacity-100');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
         });
 
         function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
             modalContent.classList.add('scale-95', 'opacity-0');
+            productModal.classList.remove('opacity-100');
             productModal.classList.add('opacity-0');
             setTimeout(() => {
                 productModal.classList.add('invisible');
-                productModal.classList.remove('visible', 'opacity-100');
-                modalContent.classList.remove('scale-100', 'opacity-100');
-                 document.body.style.overflow = ''; // Restaura scroll da página
-            }, 300);
+                productModal.classList.remove('visible');
+                 document.body.style.overflow = '';
+            }, 300); 
         }
 
         closeModalBtn.addEventListener('click', closeModal);
         closeModalBtnBottom.addEventListener('click', closeModal);
         productModal.addEventListener('click', (event) => {
-            if (event.target === productModal) {
+            if (event.target === productModal) { 
                 closeModal();
             }
         });
@@ -456,34 +503,57 @@
             }
         });
 
-
-        const navLinks = document.querySelectorAll('nav a.nav-link');
+        // Lógica do Menu Hamburger e Navegação Suave
+        const header = document.getElementById('header');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.querySelectorAll('nav a.nav-link, #mobileMenu a.nav-link');
         const sections = document.querySelectorAll('section');
-        let headerHeight = document.getElementById('header').offsetHeight;
+        let headerHeight = header.offsetHeight;
 
         window.addEventListener('resize', () => {
-             headerHeight = document.getElementById('header').offsetHeight;
+             headerHeight = header.offsetHeight;
         });
         
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = hamburgerBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
+                    headerHeight = document.getElementById('header').offsetHeight; 
                     const targetPosition = targetSection.offsetTop - headerHeight;
                      window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerBtn.querySelector('i').classList.remove('fa-times');
+                        hamburgerBtn.querySelector('i').classList.add('fa-bars');
+                    }
                 }
             });
         });
         
         window.addEventListener('scroll', () => {
-            let current = 'inicio'; // Default to 'inicio'
+            let current = 'inicio';
+            headerHeight = header.offsetHeight; 
+
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - headerHeight - 50;
+                const sectionTop = section.offsetTop - headerHeight - 50; 
                 if (pageYOffset >= sectionTop) {
                     current = section.getAttribute('id');
                 }
@@ -495,27 +565,27 @@
                     link.classList.add('active-nav-link');
                 }
             });
-            // Header shrink on scroll
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('py-2');
-                header.classList.remove('py-4');
+            
+            if (window.scrollY > 30) { 
+                header.classList.add('py-2', 'shadow-md'); 
+                header.classList.remove('py-3');
             } else {
-                header.classList.add('py-4');
-                header.classList.remove('py-2');
+                header.classList.add('py-3');
+                header.classList.remove('py-2', 'shadow-md');
             }
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Força o link "Início" a ser ativo inicialmente e recalcula o scroll.
-             setTimeout(() => { // Pequeno timeout para garantir que tudo está carregado
-                const initialLink = document.querySelector('nav a.nav-link[href="#inicio"]');
-                if (initialLink) {
-                    navLinks.forEach(link => link.classList.remove('active-nav-link')); // Limpa todos
-                    initialLink.classList.add('active-nav-link');
-                }
-                 // Dispara um evento de scroll para atualizar o estado dos links caso a página carregue no meio.
-                window.dispatchEvent(new Event('scroll'));
+            setTimeout(() => {
+                const initialLinkDesktop = document.querySelector('nav a.nav-link[href="#inicio"]');
+                const initialLinkMobile = document.querySelector('#mobileMenu a.nav-link[href="#inicio"]');
+                
+                navLinks.forEach(link => link.classList.remove('active-nav-link'));
+                
+                if (initialLinkDesktop) initialLinkDesktop.classList.add('active-nav-link');
+                if (initialLinkMobile) initialLinkMobile.classList.add('active-nav-link');
+                
+                window.dispatchEvent(new Event('scroll')); 
             }, 100);
         });
 
