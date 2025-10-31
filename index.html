@@ -3,592 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zolet'S Gás - Distribuidora Ultragaz em Cascavel-PR | Qualidade e Confiança</title>
-    <meta name="description" content="Zolet'S Gás: Sua distribuidora Ultragas de confiança em Cascavel-PR. Oferecemos botijão de gás P13, galão de água 20L, mangueiras e registros com entrega rápida e segura.">
-    <meta name="keywords" content="Zolet'S Gás, Ultragas Cascavel, gás de cozinha Cascavel, entrega de gás Cascavel, botijão P13, galão de água Cascavel, mangueira de gás, registro de gás, gás GLP Cascavel">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Zolet'S Gás">
-    <meta property="og:title" content="Zolet'S Gás - Distribuidora Ultragas em Cascavel-PR">
-    <meta property="og:description" content="Qualidade, segurança e rapidez na entrega do seu gás de cozinha e água mineral em Cascavel.">
-    <meta property="og:image" content="https://placehold.co/1200x630/005A9C/FFFFFF?text=Zolet'S+Gás+Ultragaz"> <meta property="og:url" content="URL_DO_SEU_SITE_PUBLICADO_AQUI"> <meta property="og:type" content="website">
+    <title>CakeLiz Confeitaria Artesanal de Classe Alta em Cascavel PR | Elicyane Souza</title>
+    <meta name="description" content="CakeLiz Confeitaria: Bolos sob encomenda Premium (R$ 90/kg) e Doces Finos em Cascavel PR. Design rústico sofisticado e sabor inigualável por Elicyane Souza.">
+    <meta name="keywords" content="CakeLiz Elicyane Souza, Confeitaria Rústica Cascavel, Bolos Classe Alta, Red Velvet, Ninho com Nutella Gourmet, Doces de Casamento Cascavel">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e0f2fe; /* Azul bem claro */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #005A9C;
-            border-radius: 10px;
-            border: 2px solid #e0f2fe;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #004170;
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, #0061A8 0%, #003D6B 100%);
-        }
-        .product-card, .mission-card {
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-            border: 1px solid #e2e8f0;
-        }
-        .product-card:hover, .mission-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 76, 132, 0.2);
-        }
-        .modal {
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        }
-        .modal-content {
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
-        .btn-primary {
-            background-color: #FF8C00; /* Laranja vibrante */
-            color: white;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .btn-primary:hover {
-            background-color: #E07B00;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        .btn-secondary {
-            background-color: #E0F2FE;
-            color: #005A9C;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            border: 1px solid #005A9C;
-        }
-        .btn-secondary:hover {
-            background-color: #B9E2FD;
-            transform: translateY(-2px);
-        }
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        .section-title {
-            font-size: 2.2rem; /* Ajustado para melhor responsividade */
-            font-weight: 700;
-            color: #003D6B;
-            margin-bottom: 2.5rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        @media (min-width: 768px) { /* md breakpoint */
-            .section-title {
-                font-size: 2.8rem;
-            }
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: #FF8C00;
-            border-radius: 2px;
-        }
-         .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #FF8C00;
-            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .nav-link:hover::after, .nav-link.active-nav-link::after {
-            width: 100%;
-        }
-        .nav-link:hover {
-            color: #004170;
-        }
-        .active-nav-link {
-             color: #003D6B !important;
-             font-weight: 700;
-        }
-        .mission-card i {
-            transition: transform 0.3s ease;
-        }
-        .mission-card:hover i {
-            transform: scale(1.1);
-        }
-        /* Estilos para o menu hamburger */
-        #mobileMenu.hidden {
-            display: none;
-        }
-        /* Garante que a imagem do produto no card não exceda uma altura máxima e mantenha a proporção */
-        .product-card img {
-            max-height: 160px; /* Ajuste conforme necessário */
-            object-fit: contain; /* ou 'cover' dependendo do efeito desejado */
-            width: 100%; /* Garante que a imagem ocupe a largura do container */
-            margin-left: auto;
-            margin-right: auto;
-        }
-        /* Imagem do produto no modal */
-        #modalProductImageContainer img {
-            max-height: 200px; /* Ajuste para o modal */
-            object-fit: contain;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-800">
-    <header id="header" class="bg-white shadow-lg fixed w-full z-50 top-0 transition-all duration-300">
-        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <a href="#inicio" class="text-2xl sm:text-3xl font-bold text-blue-700 hover:text-blue-600 transition-colors">
-                Zolet<span class="text-blue-500">'S</span> Gás
-            </a>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-4 md:space-x-6">
-                    <li><a href="#inicio" class="nav-link text-slate-700 hover:text-blue-600 px-2 py-1">Início</a></li>
-                    <li><a href="#produtos" class="nav-link text-slate-700 hover:text-blue-600 px-2 py-1">Produtos</a></li>
-                    <li><a href="#sobre" class="nav-link text-slate-700 hover:text-blue-600 px-2 py-1">Sobre</a></li>
-                    <li><a href="#contato" class="nav-link text-slate-700 hover:text-blue-600 px-2 py-1">Contato</a></li>
-                </ul>
+<body>
+
+    <a href="https://wa.me/554599346192?text=Gostaria%20de%20solicitar%20um%20orçamento%20do%20menu%20Artisan%20Grandeur%20da%20CakeLiz." class="whatsapp-float pulse" target="_blank" aria-label="Fale Conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header id="navbar">
+        <div class="container nav-content">
+            <a href="#hero" class="logo">CakeLiz</a>
+            <nav>
+                <a href="#manifesto" class="nav-link">A Arte</a>
+                <a href="#menu" class="nav-link">Cardápio</a>
+                <a href="#premium" class="nav-link">Obras de Arte</a>
+                <a href="#contato" class="nav-link cta-nav">Orçamento Exclusivo</a>
             </nav>
-            <div class="md:hidden">
-                <button id="hamburgerBtn" class="text-slate-700 hover:text-blue-600 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-md">
-            <ul class="flex flex-col items-center py-2">
-                <li><a href="#inicio" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Início</a></li>
-                <li><a href="#produtos" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Produtos</a></li>
-                <li><a href="#sobre" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Sobre</a></li>
-                <li><a href="#contato" class="nav-link block text-slate-700 hover:text-blue-600 py-2 px-4 w-full text-center">Contato</a></li>
-            </ul>
         </div>
     </header>
 
-    <section id="inicio" class="hero-bg text-white pt-32 pb-20 md:pt-36 md:pb-24 min-h-screen flex items-center">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
-            <img src="https://placehold.co/120x120/FFFFFF/005A9C?text=Ultragaz&font=Inter" 
-                 alt="[Ultragaz em destaque Cascavel-PR]" 
-                 class="mx-auto mb-8 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full shadow-2xl border-2 sm:border-4 border-white"
-                 onerror="this.onerror=null; this.src='https://placehold.co/160x160/CCCCCC/969696?text=Imagem+Indisponível';">
-            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 drop-shadow-md">Zolet'S Gás</h1>
-            <p class="text-xl sm:text-2xl md:text-3xl mb-6 md:mb-8 font-light drop-shadow-sm">Sua distribuidora <strong class="font-semibold">Ultragaz</strong> de confiança em Cascavel!</p>
-            <p class="text-base sm:text-lg md:text-xl mb-10 md:mb-12 max-w-xl md:max-w-3xl mx-auto leading-relaxed">Garantimos qualidade, segurança e agilidade na entrega do seu gás de cozinha e água mineral. Seu conforto é nossa prioridade.</p>
-            <a href="#produtos" class="btn-primary py-3 px-8 sm:py-4 sm:px-10 rounded-lg text-md sm:text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center">
-                Nossos Produtos <i class="fas fa-arrow-right ml-2 sm:ml-3"></i>
+    <section id="hero" class="hero-section">
+        <div class="container hero-content fade-in-up">
+            <span class="subheading">Confeitaria por Elicyane Souza</span>
+            <h1 class="hero-title">Onde a Arte Culinária Encontra o Luxo Rústico.</h1>
+            <div class="separator-line"></div>
+            <p class="hero-lead">Bolos exclusivos, feitos sob encomenda em Cascavel - PR. Qualidade intransigente para eventos de classe alta.</p>
+            <a href="https://wa.me/554599346192?text=Gostaria%20de%20reservar%20minha%20data%20para%20uma%20encomenda%20Artisan%20Grandeur%20da%20CakeLiz." class="cta-button primary-cta pulse-main" target="_blank">
+                <i class="fas fa-hammer"></i> Encomende Sua Obra-Prima (Mín. 1,5kg)
             </a>
         </div>
     </section>
-
-    <section id="produtos" class="py-16 md:py-24 bg-sky-50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="section-title">Nossos Produtos</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="botijao13kg">
-                    <div class="flex-grow">
-                        <img src="imagem/BOTIJÃO DE COZINHA 13KG CASCAVEL-PR.JPG" alt="[Botijão de Gás P13 Ultragaz em Cascavel-PR]" class="rounded-md mb-4">
-                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Botijão de Gás P13</h3>
-                        <p class="text-slate-600 text-sm mb-4">O tradicional para sua cozinha. Segurança e qualidade Ultragaz.</p>
-                    </div>
-                    <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Botijão%20de%20Gás%20P13%20Ultragaz." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
-                            <i class="fab fa-whatsapp mr-2"></i> Comprar
-                        </a>
-                    </div>
+    
+    <section id="manifesto" class="info-section light-bg">
+        <div class="container">
+            <h2 class="section-title slide-in">Nossa Visão, Nosso Padrão.</h2>
+            <div class="manifesto-grid">
+                <div class="manifesto-text slide-in">
+                    <p class="manifesto-lead">
+                        **CakeLiz** é mais que uma confeitaria; é a materialização da paixão e do rigor de **Elicyane Souza**. 
+                        Nossos bolos não são apenas doces, são peças centrais, projetadas para causar impacto.
+                    </p>
+                    <p>
+                        Trabalhamos com uma curadoria de ingredientes nobres, da manteiga pura ao chocolate belga. O sabor autêntico e a estética rústica e elegante garantem que sua celebração atinja um nível de sofisticação inigualável.
+                    </p>
+                    <a href="#menu" class="link-saiba-mais">Ver Cardápio Completo <i class="fas fa-chevron-right"></i></a>
                 </div>
-                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="galao20l">
-                    <div class="flex-grow">
-                        <img src="imagem/GALÃO 20L CASCAVEL-PR.JPG" alt="[Galão de Água Mineral 20L em Cascavel-PR]" class="rounded-md mb-4">
-                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Galão de Água 20L</h3>
-                        <p class="text-slate-600 text-sm mb-4">Água mineral de qualidade para sua hidratação e saúde.</p>
-                    </div>
-                    <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Galão%20de%20Água%2020L." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
-                            <i class="fab fa-whatsapp mr-2"></i> Comprar
-                        </a>
-                    </div>
-                </div>
-                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="mangueira">
-                    <div class="flex-grow">
-                         <img src="imagem/MANGUEIRA CASCAVEL-PR.JPG" alt="[Mangueira para Gás em Cascavel-PR]" class="rounded-md mb-4">
-                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Mangueira para Gás</h3>
-                        <p class="text-slate-600 text-sm mb-4">Certificada e segura, dentro das normas de validade.</p>
-                    </div>
-                    <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20uma%20Mangueira%20para%20Gás." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
-                            <i class="fab fa-whatsapp mr-2"></i> Comprar
-                        </a>
-                    </div>
-                </div>
-                <div class="product-card bg-white p-5 md:p-6 rounded-xl shadow-lg text-center cursor-pointer flex flex-col" data-product-id="registro">
-                    <div class="flex-grow">
-                        <img src="imagem/REGISTRO CASCAVEL-PR.JPG" alt="[Registro para Gás em Cascavel-PR]" class="rounded-md mb-4">
-                        <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Registro para Gás</h3>
-                        <p class="text-slate-600 text-sm mb-4">Essencial para a segurança da sua instalação de gás.</p>
-                    </div>
-                    <div class="mt-auto space-y-2">
-                        <button class="btn-secondary py-2 px-4 text-sm font-medium w-full rounded-lg">Ver Detalhes</button>
-                        <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20um%20Registro%20para%20Gás." target="_blank" class="btn-whatsapp py-2 px-4 text-sm font-medium w-full rounded-lg inline-flex items-center justify-center">
-                            <i class="fab fa-whatsapp mr-2"></i> Comprar
-                        </a>
-                    </div>
+                <div class="manifesto-image slide-in">
+                    <p>#FeitoPorElicyane</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="section-title">Nossa Trajetória</h2>
-            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-16 md:mb-20">
-                <div class="order-2 md:order-1">
-                    <img src="imagem/sobrenos.jpeg" alt="[Imagem ilustrativa da história da Zolet'S Gás Cascavel-PR]" class="rounded-xl shadow-xl w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/969696?text=Imagem+Indisponível';">
-                </div>
-                <div class="text-base sm:text-lg text-slate-700 space-y-4 md:space-y-5 order-1 md:order-2">
-                    <h3 class="text-2xl sm:text-3xl font-semibold text-blue-700 mb-3 md:mb-4">A História da Zolet'S Gás</h3>
-                    <p>Com profissionalismo e dedicação, a <strong>Zolet'S Gás</strong> é sua distribuidora de confiança de gás de cozinha (GLP) e água mineral na cidade de Cascavel, Paraná.</p>
-                    <p>Há 4 anos no mercado, nossa trajetória é marcada pela seriedade, responsabilidade e um firme compromisso com a satisfação de cada cliente em Cascavel.</p>
-                    <p>Fundada com o objetivo de oferecer um serviço rápido, seguro e com atendimento diferenciado, a Zolet'S Gás orgulha-se de ser a escolha número um de inúmeras famílias e empresas em Cascavel.</p>
-                    <p>Trabalhamos exclusivamente com marcas de excelência, como a Ultragaz, garantindo a qualidade e a segurança que você merece. Oferecemos botijões de gás de 13kg, água mineral em galões de 20L, registros reguladores e mangueiras para gás.</p>
-                    <p>Nossa equipe está sempre pronta para atendê-lo da melhor forma possível, com eficiência, segurança e o profissionalismo que você merece, exclusivamente em Cascavel.</p>
-                    <p>Na <strong>Zolet'S Gás</strong>, nossa prioridade é a sua tranquilidade e a qualidade dos produtos que chegam até você. Atendendo Cascavel com dedicação e a confiança que nos tornou referência!</p>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-center">
-                <div class="mission-card bg-slate-50 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl">
-                    <i class="fas fa-bullseye text-4xl sm:text-5xl text-blue-600 mb-4 md:mb-6"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Nossa Missão</h4>
-                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">Fornecer gás GLP Ultragas e água mineral com excelência, agilidade e segurança, contribuindo para o bem-estar e a comodidade dos nossos clientes em Cascavel e região, sempre com um atendimento humanizado e eficiente.</p>
-                </div>
-                <div class="mission-card bg-slate-50 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl">
-                    <i class="fas fa-eye text-4xl sm:text-5xl text-green-500 mb-4 md:mb-6"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Nossa Visão</h4>
-                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">Ser reconhecida como a principal e mais confiável distribuidora de gás e água da região, inovando continuamente em nossos serviços e processos, e expandindo nossa atuação de forma sustentável.</p>
-                </div>
-                <div class="mission-card bg-slate-50 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl">
-                    <i class="fas fa-heart text-4xl sm:text-5xl text-red-500 mb-4 md:mb-6"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-3">Nossos Valores</h4>
-                    <ul class="text-slate-600 space-y-1 sm:space-y-2 leading-relaxed list-none text-sm sm:text-base">
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Compromisso com o Cliente</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Segurança em Primeiro Lugar</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Qualidade Ultragas</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Ética e Transparência</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Agilidade e Eficiência</li>
-                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i>Valorização da Equipe</li>
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title slide-in">Cardápio de Bolos por Quilo</h2>
+            <div class="menu-grid slide-in">
+                
+                <div class="menu-card premium-card">
+                    <div class="card-header">
+                        <h3>Linha Premium</h3>
+                        <span class="price-tag">R$ 90,00/kg</span>
+                    </div>
+                    <ul class="sabor-list">
+                        <li><i class="fas fa-star"></i> **Red Velvet**, **Ninho c/ Nutella**</li>
+                        <li><i class="fas fa-star"></i> Strogonoff de Nozes, Ferrero Rocher</li>
+                        <li><i class="fas fa-star"></i> Alpino, Marta Rocha, Raffaello</li>
                     </ul>
+                    <a href="https://wa.me/554599346192?text=Gostaria%20de%20orçar%20a%20Linha%20Premium%20R$%2090%20da%20CakeLiz." class="whatsapp-card-cta" target="_blank"><i class="fab fa-whatsapp"></i> Orçar R$ 90/kg</a>
                 </div>
+
+                <div class="menu-card special-card">
+                    <div class="card-header">
+                        <h3>Linha Especiais</h3>
+                        <span class="price-tag">R$ 75,00/kg</span>
+                    </div>
+                    <ul class="sabor-list">
+                        <li><i class="fas fa-check"></i> Ninho c/ Morango, Quatro Leites c/ Morango</li>
+                        <li><i class="fas fa-check"></i> Sensação, Torta Mineira, Dois Amores</li>
+                        <li><i class="fas fa-check"></i> Ouro Branco, Sonho de Valsa, Tropical (e mais!)</li>
+                    </ul>
+                    <a href="https://wa.me/554599346192?text=Gostaria%20de%20orçar%20a%20Linha%20Especial%20R$%2075%20da%20CakeLiz." class="whatsapp-card-cta" target="_blank"><i class="fab fa-whatsapp"></i> Orçar R$ 75/kg</a>
+                </div>
+
+                <div class="menu-card basic-card">
+                    <div class="card-header">
+                        <h3>Linha Tradicionais</h3>
+                        <span class="price-tag">R$ 65,00/kg</span>
+                    </div>
+                    <ul class="sabor-list">
+                        <li><i class="fas fa-circle"></i> Quatro Leites</li>
+                        <li><i class="fas fa-circle"></i> Mousse de Ninho</li>
+                        <li><i class="fas fa-circle"></i> Brigadeiro de Ninho, Beijinho, Prestígio</li>
+                    </ul>
+                    <a href="https://wa.me/554599346192?text=Gostaria%20de%20orçar%20a%20Linha%20Tradicional%20R$%2065%20da%20CakeLiz." class="whatsapp-card-cta" target="_blank"><i class="fab fa-whatsapp"></i> Orçar R$ 65/kg</a>
+                </div>
+            </div>
+             <p class="menu-nota slide-in">Todas as encomendas têm peso mínimo de **1,5 kg**.</p>
+        </div>
+    </section>
+
+    <section id="premium" class="info-section dark-bg">
+        <div class="container">
+            <h2 class="section-title slide-in">Nossas Obras de Arte: Assinatura Premium</h2>
+            <p class="section-subheading slide-in">Inspire-se no design e nas texturas que definem o padrão CakeLiz de excelência.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in-up">
+                    <p class="item-title">RED VELVET</p>
+                    <p class="item-desc">O aveludado clássico com cobertura de cream cheese.</p>
+                </div>
+                <div class="gallery-item fade-in-up delay-200">
+                    <p class="item-title">CHANTININHO RÚSTICO</p>
+                    <p class="item-desc">Textura imperfeita e elegante com flores naturais.</p>
+                </div>
+                <div class="gallery-item fade-in-up delay-400">
+                    <p class="item-title">NINHO C/ NUTELLA</p>
+                    <p class="item-desc">Sabor imbatível em um design minimalista e rico.</p>
+                </div>
+            </div>
+             <a href="https://wa.me/554599346192?text=Quero%20um%20bolo%20no%20estilo%20Artisan%20Grandeur%20com%20o%20design%20de%20vocês." class="cta-button primary-cta final-cta pulse-main slide-in" target="_blank"><i class="fas fa-palette"></i> Criar Meu Bolo Exclusivo</a>
+        </div>
+    </section>
+    
+    <section id="contato" class="info-section light-bg">
+        <div class="container">
+            <h2 class="section-title slide-in">Complementos e Condições para Encomenda</h2>
+            
+            <div class="doces-e-detalhes-grid">
+                
+                <div class="doces-block slide-in">
+                    <h3>Doces Finos e Gourmet</h3>
+                    <p>Doces que acompanham o alto padrão de seus bolos.</p>
+                    <ul>
+                        <li><span class="doce-label">Tradicionais:</span> R$ 115,00 o Cento</li>
+                        <li><span class="doce-label">Gourmet:</span> R$ 200,00 o Cento</li>
+                        <li><span class="doce-label">Premium:</span> R$ 3,50 a Unidade (Mín. 25 un)</li>
+                    </ul>
+                    <a href="https://wa.me/554599346192?text=Gostaria%20de%20orçar%20a%20tabela%20de%20docinhos%20finos%20da%20CakeLiz%20para%20meu%20evento." class="link-doce-cta">Solicitar Tabela Detalhada</a>
+                </div>
+                
+                <div class="detalhes-block slide-in">
+                    <h3>Condições de Reserva</h3>
+                    <p>Sua data é valiosa, garanta-a com antecedência.</p>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <p>Reserva: **30% do valor total** (via PIX).</p>
+                    </div>
+                    <div class="detail-item">
+                         <i class="fas fa-clock"></i>
+                        <p>Prazo: **2 dias** de antecedência para bolos simples.</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <p>Decoração: Topper a partir de **R$ 25,00**. Flores e detalhes sob consulta.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="final-contact slide-in">
+                <p>Pronta para elevar o nível da sua celebração?</p>
+                 <a href="https://wa.me/554599346192?text=Estou%20pronta%20para%20reservar%20minha%20data%20e%20finalizar%20o%20pedido%20com%20a%20CakeLiz." class="cta-button secondary-cta pulse-main" target="_blank"><i class="fab fa-whatsapp"></i> Fale Diretamente com Elicyane</a>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="py-16 md:py-24 bg-slate-100">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="section-title">Entre em Contato</h2>
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-                <div class="space-y-6 bg-white p-6 sm:p-8 rounded-xl shadow-xl">
-                    <p class="text-md sm:text-lg text-slate-700">Tem alguma dúvida, quer fazer seu pedido ou saber mais? Fale conosco! Estamos prontos para atender você.</p>
-                    <div class="flex items-center space-x-3 sm:space-x-4">
-                        <i class="fas fa-phone-alt text-2xl sm:text-3xl text-blue-600"></i>
-                        <div>
-                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">Telefone:</h4>
-                            <a href="tel:+5545999999999" class="text-lg sm:text-xl text-slate-700 hover:text-blue-600 transition-colors">(45) 99999-9999</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 sm:space-x-4">
-                        <i class="fab fa-whatsapp text-3xl sm:text-4xl text-green-500"></i>
-                        <div>
-                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">WhatsApp:</h4>
-                            <a href="https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Zolet'S%20Gás." target="_blank" class="text-lg sm:text-xl text-slate-700 hover:text-green-600 transition-colors">(45) 99999-9999</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-3 sm:space-x-4">
-                        <i class="fas fa-envelope text-2xl sm:text-3xl text-blue-600"></i>
-                        <div>
-                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">E-mail:</h4>
-                            <a href="mailto:contato@zoletsgas.com.br" class="text-lg sm:text-xl text-slate-700 hover:text-blue-600 transition-colors break-all">contato@zoletsgas.com.br</a>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3 sm:space-x-4">
-                        <i class="fas fa-map-marker-alt text-2xl sm:text-3xl text-blue-600 mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-slate-800 text-sm sm:text-base">Nosso Endereço:</h4>
-                            <p class="text-slate-600 text-sm sm:text-base">Rua Exemplo de Endereço, 123 - Bairro Modelo</p>
-                            <p class="text-slate-600 text-sm sm:text-base">Cascavel - PR, CEP 85800-000</p>
-                        </div>
-                    </div>
-                     <div class="mt-4 pt-4 border-t border-slate-200">
-                        <h4 class="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">Horário de Funcionamento:</h4>
-                        <p class="text-slate-600 text-sm sm:text-base">Segunda a Sábado: 08:00 - 19:00</p>
-                        <p class="text-slate-600 text-sm sm:text-base">Domingos e Feriados: 08:00 - 12:00</p>
-                    </div>
-                </div>
-                <div class="h-full min-h-[300px] sm:min-h-[400px] md:min-h-full">
-                    <div class="rounded-xl shadow-xl overflow-hidden h-[300px] sm:h-[400px] md:h-full">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7018800481533!2d-53.40612052524427!3d-24.94222387787603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d52cdd964df7%3A0x7bb526e849e5928b!2sZolet'S%20G%C3%A1s!5e0!3m2!1spt-BR!2sbr!4v1743594057964!5m2!1spt-BR!2sbr" width="100%"
-                            height="100%"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="[Localização da Zolet'S Gás em Cascavel-PR]">
-                        </iframe>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-blue-800 text-blue-100 py-8 md:py-10 text-center">
-        <div class="container mx-auto px-4 sm:px-6">
-            <p class="mb-1 sm:mb-2 text-sm sm:text-base">©️ <span id="currentYear"></span> Zolet'S Gás. Todos os direitos reservados.</p>
-            <p class="text-xs sm:text-sm text-blue-200">Cascavel-PR</p>
-            <p class="text-xs text-blue-300 mt-3 sm:mt-4">Desenvolvido com <i class="fas fa-heart text-red-400"></i></p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CakeLiz Confeitaria - Artisan Grandeur por Elicyane Souza - Cascavel PR.</p>
         </div>
     </footer>
 
-    <div id="productModal" class="modal fixed inset-0 bg-black/80 flex items-center justify-center p-4 opacity-0 invisible z-[100]">
-        <div class="modal-content bg-white p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-md sm:max-w-lg transform scale-95 opacity-0">
-            <div class="flex justify-between items-center mb-4 sm:mb-6">
-                <h3 id="modalProductName" class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-700">Nome do Produto</h3>
-                <button id="closeModalBtn" class="text-slate-500 hover:text-red-600 text-3xl sm:text-4xl font-light leading-none">×</button>
-            </div>
-            <div class="text-center mb-4 sm:mb-6">
-                <div id="modalProductImageContainer" class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-3 sm:mb-4 flex items-center justify-center text-blue-600">
-                   </div>
-            </div>
-            <p id="modalProductDescription" class="text-slate-700 mb-4 sm:mb-5 text-base sm:text-lg leading-relaxed"></p>
-            <div class="bg-sky-50 p-3 sm:p-4 rounded-md">
-                <h5 class="font-semibold text-blue-700 mb-1 sm:mb-2 text-sm sm:text-base">Detalhes Adicionais:</h5>
-                <p id="modalProductDetails" class="text-slate-600 text-xs sm:text-sm leading-relaxed"></p>
-            </div>
-            <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between gap-3 sm:gap-0">
-                <a id="whatsappButtonModal" href="#" target="_blank" class="btn-whatsapp py-2 px-4 sm:py-3 sm:px-6 rounded-lg text-sm sm:text-base inline-flex items-center justify-center w-full sm:w-auto">
-                    <i class="fab fa-whatsapp mr-2"></i> Comprar via WhatsApp
-                </a>
-                <button id="closeModalBtnBottom" class="btn-secondary py-2 px-4 sm:py-3 sm:px-6 rounded-lg text-sm sm:text-base w-full sm:w-auto">Fechar</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Atualiza o ano no rodapé
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Scroll Reveal (Animação ao rolar)
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-        // Dados dos produtos com os caminhos das imagens originais para o modal
-        const productsData = {
-            botijao13kg: {
-                name: 'Botijão de Gás P13 Ultragaz',
-                // Usando o mesmo caminho da imagem do card para consistência no modal
-                imagePath: 'imagem/BOTIJÃO DE COZINHA 13KG CASCAVEL-PR.JPG', 
-                description: 'O tradicional botijão de 13kg, ideal para sua cozinha. Qualidade e segurança Ultragaz que você já conhece e confia.',
-                details: 'Capacidade: 13kg. Gás GLP de alta pureza. Perfeito para fogões residenciais e pequenos comércios. Atende aos mais altos padrões de segurança da ANP. Entrega rápida em toda Cascavel-PR.'
-            },
-            galao20l: {
-                name: 'Galão de Água Mineral 20L',
-                imagePath: 'imagem/GALÃO 20L CASCAVEL-PR.JPG',
-                description: 'Água mineral de fonte natural, leve e saudável. Essencial para a hidratação de toda a família e para o seu bem-estar diário.',
-                details: 'Volume: 20 litros. Embalagem retornável e higienizada. Ideal para residências, escritórios e eventos. Verifique nossas opções de fontes e marcas.'
-            },
-            mangueira: {
-                name: 'Mangueira para Gás de Cozinha',
-                imagePath: 'imagem/MANGUEIRA CASCAVEL-PR.JPG',
-                description: 'Mangueira trançada de PVC com validade, certificada pelo INMETRO. Essencial para a segurança da sua instalação de gás.',
-                details: 'Comprimento padrão: 1,25m (outros tamanhos sob consulta). Material: PVC flexível com reforço interno. Conexões: Padrão para botijões P13 e fogões. Verifique a data de validade antes de usar.'
-            },
-            registro: {
-                name: 'Registro Regulador de Gás',
-                imagePath: 'imagem/REGISTRO CASCAVEL-PR.JPG',
-                description: 'Regulador de pressão para gás GLP, com selo do INMETRO. Garante o fluxo correto e seguro de gás para seu fogão.',
-                details: 'Modelo: Baixa pressão, para uso doméstico. Vazão: Conforme padrão (ex: 1kg/h). Conexão de entrada: Padrão botijão P13. Conexão de saída: Padrão para mangueira. Verifique a validade e substitua conforme recomendação do fabricante.'
-            }
-        };
+            // Observa elementos para o Scroll Reveal
+            document.querySelectorAll('.fade-in-up, .slide-in').forEach(element => {
+                observer.observe(element);
+            });
+            document.querySelectorAll('.fade-in-up.delay-200').forEach(element => {
+                element.style.transitionDelay = '0.2s';
+            });
+            document.querySelectorAll('.fade-in-up.delay-400').forEach(element => {
+                element.style.transitionDelay = '0.4s';
+            });
 
-        const productModal = document.getElementById('productModal');
-        const modalContent = productModal.querySelector('.modal-content');
-        const modalProductName = document.getElementById('modalProductName');
-        const modalProductImageContainer = document.getElementById('modalProductImageContainer');
-        const modalProductDescription = document.getElementById('modalProductDescription');
-        const modalProductDetails = document.getElementById('modalProductDetails');
-        const whatsappButtonModal = document.getElementById('whatsappButtonModal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const closeModalBtnBottom = document.getElementById('closeModalBtnBottom');
 
-        document.querySelectorAll('.product-card').forEach(card => {
-            // Adiciona o event listener ao card, mas especificamente ao botão "Ver Detalhes"
-            const detailsButton = card.querySelector('.btn-secondary');
-            if (detailsButton) {
-                detailsButton.addEventListener('click', () => {
-                    const productId = card.dataset.productId;
-                    const product = productsData[productId];
+            // 2. Lógica para Navegação Fixa (Sticky)
+            const navbar = document.getElementById('navbar');
+            const heroSection = document.getElementById('hero');
+            if (navbar && heroSection) {
+                const heroHeight = heroSection.offsetHeight;
 
-                    if (product) {
-                        modalProductName.textContent = product.name;
-                        // Usa o imagePath para carregar a imagem no modal
-                        modalProductImageContainer.innerHTML = `<img src="${product.imagePath}" alt="${product.name}" class="rounded-md" onerror="this.onerror=null; this.src='https://placehold.co/200x150/CCCCCC/969696?text=Imagem Indisponível';">`;
-                        modalProductDescription.textContent = product.description;
-                        modalProductDetails.textContent = product.details;
-                        
-                        whatsappButtonModal.href = `https://wa.me/5545999999999?text=Olá!%20Gostaria%20de%20comprar%20${encodeURIComponent(product.name)}.`;
-
-                        productModal.classList.remove('invisible', 'opacity-0');
-                        productModal.classList.add('visible');
-                        productModal.offsetHeight; 
-                        productModal.classList.add('opacity-100');
-
-                        modalContent.classList.remove('scale-95', 'opacity-0');
-                        modalContent.classList.add('scale-100', 'opacity-100');
-                        document.body.style.overflow = 'hidden';
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > heroHeight - 120) { // Ajustado para ser menos agressivo
+                        navbar.classList.add('sticky');
+                    } else {
+                        navbar.classList.remove('sticky');
                     }
                 });
             }
         });
-
-        function closeModal() {
-            modalContent.classList.remove('scale-100', 'opacity-100');
-            modalContent.classList.add('scale-95', 'opacity-0');
-            productModal.classList.remove('opacity-100');
-            productModal.classList.add('opacity-0');
-            setTimeout(() => {
-                productModal.classList.add('invisible');
-                productModal.classList.remove('visible');
-                 document.body.style.overflow = '';
-            }, 300); 
-        }
-
-        closeModalBtn.addEventListener('click', closeModal);
-        closeModalBtnBottom.addEventListener('click', closeModal);
-        productModal.addEventListener('click', (event) => {
-            if (event.target === productModal) { 
-                closeModal();
-            }
-        });
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && productModal.classList.contains('visible')) {
-                closeModal();
-            }
-        });
-
-        // Lógica do Menu Hamburger e Navegação Suave
-        const header = document.getElementById('header');
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const navLinks = document.querySelectorAll('nav a.nav-link, #mobileMenu a.nav-link');
-        const sections = document.querySelectorAll('section');
-        let headerHeight = header.offsetHeight;
-
-        window.addEventListener('resize', () => {
-             headerHeight = header.offsetHeight;
-        });
-        
-        hamburgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = hamburgerBtn.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    headerHeight = document.getElementById('header').offsetHeight; 
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                     window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        hamburgerBtn.querySelector('i').classList.remove('fa-times');
-                        hamburgerBtn.querySelector('i').classList.add('fa-bars');
-                    }
-                }
-            });
-        });
-        
-        window.addEventListener('scroll', () => {
-            let current = 'inicio';
-            headerHeight = header.offsetHeight; 
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - headerHeight - 50; 
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active-nav-link');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active-nav-link');
-                }
-            });
-            
-            if (window.scrollY > 30) { 
-                header.classList.add('py-2', 'shadow-md'); 
-                header.classList.remove('py-3');
-            } else {
-                header.classList.add('py-3');
-                header.classList.remove('py-2', 'shadow-md');
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const initialLinkDesktop = document.querySelector('nav a.nav-link[href="#inicio"]');
-                const initialLinkMobile = document.querySelector('#mobileMenu a.nav-link[href="#inicio"]');
-                
-                navLinks.forEach(link => link.classList.remove('active-nav-link'));
-                
-                if (initialLinkDesktop) initialLinkDesktop.classList.add('active-nav-link');
-                if (initialLinkMobile) initialLinkMobile.classList.add('active-nav-link');
-                
-                window.dispatchEvent(new Event('scroll')); 
-            }, 100);
-        });
-
     </script>
 </body>
 </html>
