@@ -1,10 +1,10 @@
-/* PALETA DE CORES RÚSTICO CLASSE ALTA */
+/* PALETA DE CORES NOVA (Focada em #972331 e #fff4ec) */
 :root {
-    --primary-color: #964B00; /* Terracota Profundo / Marrom-Telha */
-    --secondary-color: #F8F8F8; /* Creme Suave para fundo */
-    --dark-color: #382414; /* Marrom Espresso para texto principal */
-    --accent-color: #B87333; /* Cobre / Bronze Fosco para detalhes */
-    --cta-color: #25d366; /* Verde WhatsApp */
+    --primary-color: #972331; /* Vermelho Profundo/Borgonha (Cor do Logo/Marca CAKELIZ) */
+    --secondary-color: #fff4ec; /* Creme Suave / Pêssego (Fundo Principal do Site) */
+    --dark-color: #333333; /* Cinza Escuro Profundo (Para títulos e corpo de texto) */
+    --accent-color: #f9bec8; /* Rosa Bebê Suave / Blush (Destaque Secundário e Suavizante) */
+    --cta-color: #25d366; /* Verde WhatsApp (Mantido) */
 
     --font-title: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
@@ -19,8 +19,8 @@
 body {
     font-family: var(--font-body);
     line-height: 1.7;
-    color: #666;
-    background-color: white;
+    color: var(--dark-color); 
+    background-color: var(--secondary-color); 
 }
 
 .container {
@@ -57,7 +57,7 @@ h1, h2, h3 {
 
 /* 1. NAVEGAÇÃO FIXA (HEADER) */
 #navbar {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.95); /* Manter semi-transparente para modernidade */
     padding: 20px 0;
     position: fixed;
     width: 100%;
@@ -69,7 +69,7 @@ h1, h2, h3 {
 
 #navbar.sticky {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--accent-color); /* Destaque Rosa Suave */
 }
 
 .nav-content {
@@ -83,7 +83,7 @@ h1, h2, h3 {
     font-size: 2.5em;
     font-weight: 900;
     letter-spacing: 1px;
-    color: var(--dark-color);
+    color: var(--primary-color); /* LOGO CAKELIZ AGORA É #972331 */
 }
 
 nav a {
@@ -95,13 +95,13 @@ nav a {
 }
 
 .cta-nav {
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--primary-color); 
     padding: 8px 15px;
     border-radius: 3px;
     color: var(--dark-color);
 }
 .cta-nav:hover {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -125,8 +125,6 @@ nav a {
 /* 3. HERO SECTION */
 .hero-section {
     background-color: var(--secondary-color); 
-    /* Adicione uma imagem rústica e elegante de fundo aqui, ex: madeira escura ou linho */
-    background: linear-gradient(rgba(248, 248, 248, 0.9), rgba(248, 248, 248, 0.9)), url('placeholder_rustic_bg.jpg') center/cover;
     padding: 220px 0 150px;
     min-height: 90vh;
     text-align: center;
@@ -151,7 +149,7 @@ nav a {
 .separator-line {
     width: 80px;
     height: 3px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color); 
     margin: 20px auto 30px;
 }
 
@@ -169,14 +167,14 @@ nav a {
 }
 
 .primary-cta { 
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); 
 }
 .primary-cta:hover { 
-    background-color: #793b00;
+    background-color: #791c27; /* Tom um pouco mais escuro do novo primary */
     transform: translateY(-3px);
 }
 .secondary-cta { 
-    background-color: var(--dark-color);
+    background-color: var(--dark-color); 
 }
 .secondary-cta:hover { 
     background-color: black;
@@ -207,7 +205,7 @@ nav a {
     color: white;
 }
 .dark-bg h2 {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Títulos escuros com destaque Rosa Suave */
 }
 
 .section-title {
@@ -252,10 +250,10 @@ nav a {
     color: var(--dark-color);
 }
 .manifesto-image {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); 
     min-height: 400px;
     border-radius: 5px;
-    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1); /* Sombra Rústica */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -270,7 +268,10 @@ nav a {
 }
 
 
-/* 6. CARDÁPIO (RÚSTICO E ESTRUTURADO) */
+/* 6. CARDÁPIO (Clean e Sofisticado) */
+.menu-section {
+    background-color: var(--secondary-color); 
+}
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -280,19 +281,16 @@ nav a {
 }
 
 .menu-card {
-    /* CORREÇÃO DO ALINHAMENTO AQUI */
     display: flex; 
     flex-direction: column;
-    /* FIM DA CORREÇÃO */
-    background-color: white;
+    background-color: white; /* Cartões brancos para contraste */
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--accent-color);
+    border-top: 4px solid var(--accent-color); /* Linha divisória Rosa Suave */
     text-align: left;
     transition: all 0.3s ease;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+    border: 1px solid #eee; /* Linha fina para definir o card */
 }
 .menu-card:hover {
     transform: translateY(-5px);
@@ -300,8 +298,7 @@ nav a {
 }
 
 .premium-card {
-    border-top: 4px solid var(--primary-color);
-    background-color: var(--secondary-color);
+    border-top: 4px solid var(--primary-color); /* Destaque premium com Vermelho Profundo */
 }
 
 .card-header {
@@ -316,6 +313,7 @@ nav a {
     font-size: 1.8em;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--dark-color);
 }
 
 .price-tag {
@@ -326,7 +324,6 @@ nav a {
 }
 
 .sabor-list {
-    /* Garante que a lista preencha o espaço máximo antes do botão */
     flex-grow: 1; 
 }
 .sabor-list li {
@@ -335,16 +332,14 @@ nav a {
 }
 .sabor-list i {
     margin-right: 10px;
-    color: var(--accent-color);
+    color: var(--primary-color); 
 }
 .premium-card .fa-star { color: var(--primary-color); }
-.special-card .fa-check { color: #666; }
-.basic-card .fa-circle { color: #ccc; }
+.special-card .fa-check { color: var(--accent-color); } 
+.basic-card .fa-circle { color: var(--accent-color); }
 
 .whatsapp-card-cta {
-    /* CORREÇÃO DO ALINHAMENTO AQUI: Empurra o botão para baixo */
     margin-top: auto; 
-    /* FIM DA CORREÇÃO */
     display: block;
     width: 100%;
     text-align: center;
@@ -368,7 +363,7 @@ nav a {
     padding-top: 30px;
 }
 
-/* 7. GALERIA (CLASSE ALTA) */
+/* 7. GALERIA (Cor de Destaque) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -376,9 +371,9 @@ nav a {
 }
 
 .gallery-item {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--primary-color); 
     min-height: 350px;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
     padding: 20px;
     text-align: left;
@@ -388,7 +383,7 @@ nav a {
     transition: all 0.3s ease;
 }
 .gallery-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
 }
 
 .item-title {
@@ -415,7 +410,7 @@ nav a {
 .doces-block, .detalhes-block {
     background-color: white;
     padding: 30px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--accent-color); /* Borda Rosa Suave */
     border-radius: 5px;
 }
 .doces-block h3, .detalhes-block h3 {
@@ -457,7 +452,7 @@ nav a {
 
 .final-contact {
     margin-top: 80px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--accent-color); /* Borda Rosa Suave */
     padding-top: 40px;
 }
 .final-contact p {
@@ -470,7 +465,7 @@ nav a {
 /* 9. FOOTER */
 footer {
     background-color: var(--dark-color);
-    color: var(--secondary-color);
+    color: white;
     text-align: center;
     padding: 30px 0;
     font-size: 0.9em;
