@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Página Principal - Prioridade Máxima -->
+  <url>
+    <loc>https://www.zoletsgas.com.br/index.html</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://www.zoletsgas.com.br/imagem/BOTIJÃO_DE_COZINHA_13KG_CASCAVEL-PR.jpg</image:loc>
+      <image:title>Botijão de Gás P13 Ultragaz - Disk Gás Cascavel</image:title>
+      <image:caption>Entrega rápida de gás em Cascavel-PR</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.zoletsgas.com.br/imagem/GALÃO_20L_CASCAVEL-PR.jpg</image:loc>
+      <image:title>Galão de Água Mineral 20L - Zolet'S Gás</image:title>
+    </image:image>
+  </url>
+
+  <!-- Seção Produtos -->
+  <url>
+    <loc>https://www.zoletsgas.com.br/produtos.html</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Seção Bairros (SEO Local importante) -->
+  <url>
+    <loc>https://www.zoletsgas.com.br/bairros.html</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Seção Sobre -->
+  <url>
+    <loc>https://www.zoletsgas.com.br/sobre-nos.html</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Seção FAQ (Conteúdo rico para SEO) -->
+  <url>
+    <loc>https://www.zoletsgas.com.br/faq.html</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Seção Contato -->
+  <url>
+    <loc>https://www.zoletsgas.com.br/contato.html</loc>
+    <lastmod>2025-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>
