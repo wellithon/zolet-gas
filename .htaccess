@@ -1,0 +1,126 @@
+# ==============================================================================
+# ARQUIVO DE CONFIGURAÇÃO DO SERVIDOR APACHE (.htaccess)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. SEGURANÇA BÁSICA DO SERVIDOR
+# ------------------------------------------------------------------------------
+# Desabilita a listagem de diretórios (Impede que hackers vejam os arquivos das pastas)
+Options -Indexes
+
+# Oculta informações sobre a assinatura do servidor
+ServerSignature Off
+
+# Bloqueia o acesso direto ao arquivo .htaccess, .env e arquivos de controle git
+<FilesMatch "^\.(htaccess|htpasswd|env|git)">
+    Require all denied
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# 2. MOTOR DE REDIRECIONAMENTO E URLS LIMPAS (REWRITE ENGINE)
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # A) Forçar HTTPS (SSL) e Forçar WWW (Unifica o domínio para SEO)
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+    RewriteRule ^ https://www.%1%{REQUEST_URI} [L,NE,R=301]
+
+    # B) Remover extensão .html (Acesso limpo: site.com/contato)
+    # Permite acessar sem .html
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^/]+)/?$ $1.html [L]
+
+    # Redireciona permanentemente as requisições antigas de arquivos .html para a versão limpa
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,L,NE]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 3. OTIMIZAÇÃO DE PERFORMANCE (COMPRESSÃO GZIP)
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    # Força a compressão de arquivos de texto, CSS, JavaScript, XML, Fontes e JSON
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
+    AddOutputFilterByType DEFLATE application/manifest+json
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 4. POLÍTICAS DE CACHE NO NAVEGADOR (BROWSER CACHING PARA SEO)
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # CSS e Javascript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Imagens e Ícones
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fontes
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+
+    # HTML e Dados (Não manter cache para sempre, para que atualizações funcionem rápido)
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/ld+json "access plus 0 seconds"
+</IfModule>
+
+# Controle de Cache Alternativo para Servidores Sem mod_expires
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|jpg|jpeg|png|webp|svg|gif|ico|woff|woff2|ttf)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm|xml|txt|json)$">
+        Header set Cache-Control "max-age=0, must-revalidate, public"
+    </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 5. CABEÇALHOS DE SEGURANÇA CIBERNÉTICA FORÇADOS VIA SERVIDOR
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Impede que seu site seja colocado em iFrames por invasores (Clickjacking)
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Previne ataques de "MIME-sniffing" (onde um invasor renomeia um executável como imagem)
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Ativa o filtro XSS interno do navegador (Cross-Site Scripting)
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Força o HSTS - Todas as conexões vindas do cliente DEVEM ser HTTPS (Certificado de 1 ano)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # (Opcional) Content-Security-Policy (CSP) também pode ser gerado aqui
+    # Como você já incluiu as tags <meta> perfeitamente no HTML, essa diretiva de servidor atua como uma segunda camada.
+</IfModule>
