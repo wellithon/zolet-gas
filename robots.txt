@@ -1,0 +1,98 @@
+# robots.txt - Zolet'S Gás | Disk Gás Cascavel
+# https://www.zoletsgas.com.br/robots.txt
+# Última atualização: 2026-03-17
+
+# ==========================================
+# REGRAS GLOBAIS (Todos os User-Agents)
+# ==========================================
+User-agent: *
+
+# Permitir o rastreamento geral
+Allow: /
+
+# ------------------------------------------
+# BLOQUEAR ARQUIVOS E DIRETÓRIOS DESNECESSÁRIOS
+# ------------------------------------------
+
+# Arquivos de sistema, configuração e bibliotecas
+Disallow: /.htaccess
+Disallow: /.env
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /config/
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+
+# Arquivos temporários, pacotes e backups
+Disallow: /*.tmp$
+Disallow: /*.bak$
+Disallow: /*~$
+Disallow: /backup/
+Disallow: /tmp/
+Disallow: /*.rar$
+Disallow: /*.zip$
+Disallow: /imagem.rar
+
+# Parâmetros de rastreamento (Evita indexação de conteúdo duplicado)
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?ref=*
+Disallow: /*?s=*
+
+# ------------------------------------------
+# PERMITIR RECURSOS IMPORTANTES (SEO)
+# ------------------------------------------
+
+# Garantir que os motores de busca renderizem a página corretamente
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /imagem/
+
+# ------------------------------------------
+# REGRAS ESPECÍFICAS POR BOT
+# ------------------------------------------
+
+# Googlebot (Principal motor de busca)
+# Nota: O Googlebot ignora a diretiva Crawl-delay. A taxa de rastreamento deve ser ajustada via Google Search Console.
+User-agent: Googlebot
+Allow: /
+
+# Googlebot-Image (Indexação de imagens para o Google Images)
+User-agent: Googlebot-Image
+Allow: /imagem/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Bingbot (Microsoft Bing)
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# YandexBot (Yahoo / Yandex)
+User-agent: YandexBot
+Crawl-delay: 5
+
+# Baiduspider (Motor de busca Chinês - Proteção de banda)
+User-agent: Baiduspider
+Crawl-delay: 10
+
+# ==========================================
+# SITEMAPS (Fundamental para indexação profunda)
+# ==========================================
+Sitemap: https://www.zoletsgas.com.br/sitemap.xml
+
+# ==========================================
+# CONTATO DO WEBMASTER
+# ==========================================
+# Dúvidas sobre indexação: zoletsgas@gmail.com
